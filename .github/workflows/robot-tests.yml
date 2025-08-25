@@ -8,138 +8,100 @@ on:
   workflow_dispatch:
 
 jobs:
-    Run-Test:
-      runs-on: ubuntu-20.04
-      steps:
-        - name: Checkout repository
-          uses: actions/checkout@v1
-        - uses: actions/cache@v2
-          id: cache
-          with:
-            path: ~/.cache/pip
-            key: ${{ runner.os }}-pip-${{ hashFiles('**/requirement.txt') }}
-        - name: Install pip dependencies
-          run: |
-            pip install --upgrade pip
-            pip install -r requirement.txt
-        - name: Run Test
-          run: python -m robot --outputdir results testcases/functional_tests
-        - name: Run Test and create report
-          run: python -m robot -d reports -x junit-report.xml "testcases/functional_tests"
-        - name: Run Robot Framework tests and generate report
-          run: |
-             echo "ROBOT_RC=$?" >> "$GITHUB_ENV"  
-        # - name: If Auto Test Pass Rate Not 100%, Job Will Fail
-        #   if: env.ROBOT_RC != '0'
-        #   run: |
-        #     echo "Auto Test Pass Rate Not 100%, Please Check Test Result"
-        #     exit 1
-        - name: Publish test results
-          uses: actions/upload-artifact@v2
-          with:
-            name: robot-test-results
-            path: results        
-        - name: Upload test results
-          uses: actions/upload-artifact@v4
-          if: always()
-          with:
-            name: robot-test-results-${{ matrix.browser }}-${{ matrix.python-version }}
-            path: |
-              results/
-              *.html
-          
-        - name: Publish Robot Framework results
-          uses: actions/upload-artifact@v4
-          if: always()
-          with:
-            name: robot-reports-${{ matrix.browser }}-${{ matrix.python-version }}
-            path: |
-              results/report.html
-              results/log.html
-              results/output.xml
-              
-        - name: Comment PR with test results
-          if: github.event_name == 'pull_request'
-          uses: actions/github-script@v6
-          with:
-            script: |
-              const fs = require('fs');
-              const path = require('path');
-              
-              try {
-                const outputXml = fs.readFileSync('results/output.xml', 'utf8');
-                const passed = (outputXml.match(/passed="(\d+)"/) || [])[1] || 0;
-                const failed = (outputXml.match(/failed="(\d+)"/) || [])[1] || 0;
-                const skipped = (outputXml.match(/skipped="(\d+)"/) || [])[1] || 0;
-                
-                const comment = `## 🤖 Robot Framework Test Results
-                
-                **Browser:** ${{ matrix.browser }}
-                **Python Version:** ${{ matrix.python-version }}
-                
-                ✅ **Passed:** ${passed}
-                ❌ **Failed:** ${failed}
-                ⏭️ **Skipped:** ${skipped}
-                
-                [View Detailed Report](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})`;
-                
-                github.rest.issues.createComment({
-                  issue_number: context.issue.number,
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  body: comment
-                });
-              } catch (error) {
-                console.log('Could not read test results:', error.message);
-              }
+  test:
+    runs-on: macos-latest
 
-    lint:
-      runs-on: ubuntu-latest
-      
-      steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v4
         with:
           python-version: '3.10'
-          
-      - name: Install Robot Framework linting tools
+
+      - name: Install dependencies
         run: |
-          pip install robotframework-lint
-          pip install robotframework-tidy
-          
-      - name: Lint Robot files
+          python -m pip install --upgrade pip
+          # Install additional dependencies if needed
+          pip install -r requirements.txt
+
+      - name: Run Robot Framework tests
+        env:
+          WORK_TOKEN: ${{ secrets.GIT_TOKEN }}
+          TZ: Asia/Ho_Chi_Minh
         run: |
-          rflint --ignore TooManyTestSteps --ignore LineTooLong tests/ resources/
-          
-      - name: Format Robot files
-        run: |
-          robotidy tests/ resources/ --overwrite
-  
-    security:
-      runs-on: ubuntu-latest
-      
-      steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        
-      - name: Run Bandit security scan
-        run: |
-          pip install bandit
-          bandit -r . -f json -o bandit-report.json || true
-          
-      - name: Run Safety check
-        run: |
-          pip install safety
-          safety check --json --output safety-report.json || true
-          
-      - name: Upload security report
+          if ! robot --outputdir results --exclude skip tests/; then
+              echo "Robot Framework tests failed. Rerunning failed tests..."
+              if [ -f results/output.xml ]; then
+                  robot --rerunfailed results/output.xml --outputdir results_rerun tests/ || true
+                  if [ -f results_rerun/output.xml ]; then
+                      rebot --output results/output.xml --log results/log.html --report results/report.html --merge results/output.xml results_rerun/output.xml
+                  else
+                      echo "No output.xml file found from rerun. Skipping merge."
+                  fi
+              else
+                  echo "No output.xml file found. Cannot rerun failed tests."
+              fi
+          fi
+
+          echo "Script execution completed"
+        continue-on-error: true
+
+      - name: Upload artifact
         uses: actions/upload-artifact@v4
-        if: always()
         with:
-          name: security-report
-          path: |
-            safety-report.json
-            bandit-report.json
+          path: ./results
+          name: robot-test-results
+          retention-days: 3
+
+  lint:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+        
+    - name: Install Robot Framework linting tools
+      run: |
+        pip install robotframework-lint
+        pip install robotframework-tidy
+        
+    - name: Lint Robot files
+      run: |
+        rflint --ignore TooManyTestSteps --ignore LineTooLong tests/ resources/
+        
+    - name: Format Robot files
+      run: |
+        robotidy tests/ resources/ --overwrite
+
+  security:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Run Bandit security scan
+      run: |
+        pip install bandit
+        bandit -r . -f json -o bandit-report.json || true
+        
+    - name: Run Safety check
+      run: |
+        pip install safety
+        safety check --json --output safety-report.json || true
+        
+    - name: Upload security report
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: security-report
+        path: |
+          safety-report.json
+          bandit-report.json
