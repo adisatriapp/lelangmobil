@@ -1,9 +1,11 @@
 *** Settings ***
+Documentation    Registration flow validates user can register successfully
 Resource    ${CURDIR}/../resources/imports.resource
 
 
 *** Test Cases ***
 Register with valid credentials
+    [Documentation]    End-to-end registration using valid personal and payment data
     GIVEN The user is on the Registration page - Data Diri tab
     WHEN The user fills all "Nama Depan" with value    ${namaDepan}
     AND The user fills all "Nama Belakang" with value    ${namaBelakang}
@@ -36,22 +38,3 @@ Register with valid credentials
     AND Click “Daftar”
     THEN The Data inputs are saved and email validation is sended
     AND User will redirect to login page
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

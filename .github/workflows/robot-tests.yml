@@ -46,10 +46,26 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y google-chrome-stable
         
-    - name: Install Firefox
+    - name: Install Firefox and Geckodriver
       if: matrix.browser == 'firefox'
       run: |
-        sudo apt-get install -y firefox
+        set -e
+        # Try apt Firefox first
+        if ! command -v firefox >/dev/null 2>&1; then
+          sudo apt-get update
+          sudo apt-get install -y firefox || true
+        fi
+        # Fallback to snap if still missing
+        if ! command -v firefox >/dev/null 2>&1; then
+          sudo snap install firefox || true
+        fi
+        # Install geckodriver
+        GECKO_VERSION=$(curl -s https://api.github.com/repos/mozilla/geckodriver/releases/latest | python -c "import sys, json; print([a['name'] for a in json.load(sys.stdin)['assets'] if 'linux64.tar.gz' in a['name']][0])" 2>/dev/null || echo "geckodriver-v0.34.0-linux64.tar.gz")
+        GECKO_URL="https://github.com/mozilla/geckodriver/releases/download/${GECKO_VERSION%%-linux64.tar.gz}/${GECKO_VERSION}"
+        wget -q ${GECKO_URL}
+        tar -xzf ${GECKO_VERSION}
+        sudo mv geckodriver /usr/local/bin/
+        sudo chmod +x /usr/local/bin/geckodriver
         
     - name: Install Python dependencies
       run: |
@@ -141,7 +157,7 @@ jobs:
         
     - name: Lint Robot files
       run: |
-        rflint tests/ resources/ --ignore "TooManyTestSteps" --ignore "LineTooLong"
+        rflint --ignore TooManyTestSteps --ignore LineTooLong tests/ resources/
         
     - name: Format Robot files
       run: |
