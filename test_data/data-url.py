@@ -1,0 +1,1 @@
+login_URL = "https://jkt:RsonSmW7UgLUKm9@auction.lelangmobilku.co.id/login"

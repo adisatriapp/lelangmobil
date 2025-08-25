@@ -1,0 +1,174 @@
+name: Robot Framework Tests
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        python-version: [3.9, 3.10, 3.11]
+        browser: [chrome, firefox]
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+        
+    - name: Cache pip dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ matrix.python-version }}-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-${{ matrix.python-version }}-
+          
+    - name: Install system dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y wget unzip
+        
+    - name: Install Chrome/Chromium
+      if: matrix.browser == 'chrome'
+      run: |
+        wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+        echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
+        sudo apt-get update
+        sudo apt-get install -y google-chrome-stable
+        
+    - name: Install Firefox
+      if: matrix.browser == 'firefox'
+      run: |
+        sudo apt-get install -y firefox
+        
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install robotframework
+        pip install robotframework-seleniumlibrary
+        pip install robotframework-requests
+        pip install robotframework-pabot
+        pip install webdriver-manager
+        
+    - name: Create requirements.txt
+      run: |
+        pip freeze > requirements.txt
+        
+    - name: Run Robot Framework tests
+      run: |
+        robot --outputdir results --report report.html --log log.html tests/
+        
+    - name: Upload test results
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: robot-test-results-${{ matrix.browser }}-${{ matrix.python-version }}
+        path: |
+          results/
+          *.html
+          
+    - name: Publish Robot Framework results
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: robot-reports-${{ matrix.browser }}-${{ matrix.python-version }}
+        path: |
+          results/report.html
+          results/log.html
+          results/output.xml
+          
+    - name: Comment PR with test results
+      if: github.event_name == 'pull_request'
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const fs = require('fs');
+          const path = require('path');
+          
+          try {
+            const outputXml = fs.readFileSync('results/output.xml', 'utf8');
+            const passed = (outputXml.match(/passed="(\d+)"/) || [])[1] || 0;
+            const failed = (outputXml.match(/failed="(\d+)"/) || [])[1] || 0;
+            const skipped = (outputXml.match(/skipped="(\d+)"/) || [])[1] || 0;
+            
+            const comment = `## 🤖 Robot Framework Test Results
+            
+            **Browser:** ${{ matrix.browser }}
+            **Python Version:** ${{ matrix.python-version }}
+            
+            ✅ **Passed:** ${passed}
+            ❌ **Failed:** ${failed}
+            ⏭️ **Skipped:** ${skipped}
+            
+            [View Detailed Report](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})`;
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
+          } catch (error) {
+            console.log('Could not read test results:', error.message);
+          }
+
+  lint:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        
+    - name: Install Robot Framework linting tools
+      run: |
+        pip install robotframework-lint
+        pip install robotframework-tidy
+        
+    - name: Lint Robot files
+      run: |
+        rflint tests/ resources/ --ignore "TooManyTestSteps" --ignore "LineTooLong"
+        
+    - name: Format Robot files
+      run: |
+        robotidy tests/ resources/ --overwrite
+
+  security:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Run Bandit security scan
+      run: |
+        pip install bandit
+        bandit -r . -f json -o bandit-report.json || true
+        
+    - name: Run Safety check
+      run: |
+        pip install safety
+        safety check --json --output safety-report.json || true
+        
+    - name: Upload security report
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: security-report
+        path: |
+          safety-report.json
+          bandit-report.json

@@ -1,0 +1,5 @@
+tab_dataDiri = "Data Diri"
+tab_deposit = "Deposit"
+tab_informasiTagihan = "Informasi Tagihan"
+tab_pembayaran = "Pembayaran"
+tab_riwayatPembayaran = "Riwayat Pembayaran"

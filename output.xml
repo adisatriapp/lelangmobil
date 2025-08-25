@@ -1,0 +1,1834 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.3 on win32)" generated="2025-08-25T13:26:54.901759" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="D:\Document\My Project\Github\robot lelang mobil\lelangmobil\tests">
+<suite id="s1-s1" name="1-Register" source="D:\Document\My Project\Github\robot lelang mobil\lelangmobil\tests\1-register.robot">
+<test id="s1-s1-t1" name="Register with valid credentials" line="6">
+<kw name="GIVEN The user is on the Registration page - Data Diri tab" owner="datadiri">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:26:55.083740" level="INFO">Opening browser 'chrome' to base url 'https://jkt:RsonSmW7UgLUKm9@auction.lelangmobilku.co.id/login'.</msg>
+<arg>${login_URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-25T13:26:55.083740" elapsed="4.525165"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-25T13:26:59.609915" elapsed="0.076900"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:26:59.686815" level="INFO">Clicking element '//a[text()='Daftar Sekarang']'.</msg>
+<arg>${btn_daftar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:26:59.686815" elapsed="0.209038"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${title_pendaftaran}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-25T13:26:59.895853" elapsed="0.079382"/>
+</kw>
+<status status="PASS" start="2025-08-25T13:26:55.083740" elapsed="4.891495"/>
+</kw>
+<kw name="WHEN The user fills all &quot;Nama Depan&quot; with value" owner="datadiri">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:26:59.975235" level="INFO">Typing text 'Logique' into text field '//input[@placeholder='Nama Depan']'.</msg>
+<arg>${input_namaDepan}</arg>
+<arg>${val}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:26:59.975235" elapsed="0.125509"/>
+</kw>
+<kw name="Get Value" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:00.118694" level="INFO">${valDepan} = Logique</msg>
+<var>${valDepan}</var>
+<arg>${input_namaDepan}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:00.100744" elapsed="0.017950"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${valDepan}</arg>
+<arg>${val}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-08-25T13:27:00.118694" elapsed="0.000000"/>
+</kw>
+<arg>${namaDepan}</arg>
+<status status="PASS" start="2025-08-25T13:26:59.975235" elapsed="0.143459"/>
+</kw>
+<kw name="AND The user fills all &quot;Nama Belakang&quot; with value" owner="datadiri">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:00.118694" level="INFO">Typing text 'Test' into text field '//input[@placeholder='Nama Belakang']'.</msg>
+<arg>${input_namaBelakang}</arg>
+<arg>${val}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:00.118694" elapsed="0.069961"/>
+</kw>
+<kw name="Get Value" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:00.198935" level="INFO">${valBelakang} = Test</msg>
+<var>${valBelakang}</var>
+<arg>${input_namaBelakang}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:00.188655" elapsed="0.010280"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${valBelakang}</arg>
+<arg>${val}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-08-25T13:27:00.198935" elapsed="0.000000"/>
+</kw>
+<arg>${namaBelakang}</arg>
+<status status="PASS" start="2025-08-25T13:27:00.118694" elapsed="0.080241"/>
+</kw>
+<kw name="AND Fill &quot;Tempat Lahir&quot; with value" owner="datadiri">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:00.198935" level="INFO">Typing text 'Jakarta' into text field '//input[@placeholder='Tempat Lahir']'.</msg>
+<arg>${input_tempatLahir}</arg>
+<arg>${val}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:00.198935" elapsed="0.072433"/>
+</kw>
+<kw name="Get Value" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:00.282831" level="INFO">${valCheck} = Jakarta</msg>
+<var>${valCheck}</var>
+<arg>${input_tempatLahir}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:00.271368" elapsed="0.011463"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${valCheck}</arg>
+<arg>${val}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-08-25T13:27:00.282831" elapsed="0.000000"/>
+</kw>
+<arg>${tempatLahir}</arg>
+<status status="PASS" start="2025-08-25T13:27:00.198935" elapsed="0.083896"/>
+</kw>
+<kw name="AND Fill &quot;Tanggal Lahir&quot; with value" owner="datadiri">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${input_tglLahir}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-08-25T13:27:00.283828" elapsed="0.281501"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${input_tglLahir}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-25T13:27:00.565329" elapsed="0.013456"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:00.578785" level="INFO">Clicking element '//input[@placeholder='DD/MM/YYYY']'.</msg>
+<arg>${input_tglLahir}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:00.578785" elapsed="0.144005"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:00.722790" level="INFO">Clicking element '//div[@aria-label='Open months overlay']'.</msg>
+<arg>${choose_month_overlay}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:00.722790" elapsed="0.103601"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:00.826391" level="INFO">Clicking element '//div[@class='dp__overlay_row'][1]/div[@class='dp__overlay_col'][1]/div[@class='dp__overlay_cell dp__overlay_cell_pad']'.</msg>
+<arg>${btn_Jan}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:00.826391" elapsed="0.077281"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:00.903672" level="INFO">Clicking element '//div[@aria-label='Open years overlay']'.</msg>
+<arg>${choose_year_overlay}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:00.903672" elapsed="0.144843"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:01.049021" level="INFO">Clicking element '//div[@class='dp__overlay_row'][36]/div[@class='dp__overlay_col'][2]/div[@class='dp__overlay_cell dp__overlay_cell_pad']'.</msg>
+<arg>${btn_2006}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:01.049021" elapsed="0.089605"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:01.138626" level="INFO">Clicking element '//div[@class='dp__calendar_row'][1]/div[@class='dp__calendar_item'][7]/div[@class='dp__cell_inner dp__pointer dp__date_hover']'.</msg>
+<arg>${btn_01}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:01.138626" elapsed="0.156507"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:01.295133" level="INFO">Clicking element '//div[@class='dp__action_row']/div[@class='dp__action_buttons']/span[@class='dp__action dp__select']'.</msg>
+<arg>${btn_selectDate}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:01.295133" elapsed="0.061039"/>
+</kw>
+<arg>${tanggalLahir}</arg>
+<status status="PASS" start="2025-08-25T13:27:00.283828" elapsed="1.072344"/>
+</kw>
+<kw name="AND Fill Nomor KTP with value" owner="datadiri">
+<kw name="Generate Random String" owner="String">
+<msg time="2025-08-25T13:27:01.357281" level="INFO">${rand} = 931482</msg>
+<var>${rand}</var>
+<arg>6</arg>
+<arg>[NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-08-25T13:27:01.357281" elapsed="0.000000"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${input_KTP}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-08-25T13:27:01.357281" elapsed="0.281586"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${input_KTP}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-25T13:27:01.638867" elapsed="0.010575"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:01.649442" level="INFO">Typing text '1234567890931482' into text field '//input[@placeholder='Nomor KTP']'.</msg>
+<arg>${input_KTP}</arg>
+<arg>${val}${rand}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:01.649442" elapsed="0.091684"/>
+</kw>
+<kw name="Get Value" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:01.755879" level="INFO">${valCheck} = 1234567890931482</msg>
+<var>${valCheck}</var>
+<arg>${input_KTP}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:01.741126" elapsed="0.014753"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${valCheck}</arg>
+<arg>${val}${rand}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-08-25T13:27:01.755879" elapsed="0.000000"/>
+</kw>
+<arg>${noKTP}</arg>
+<status status="PASS" start="2025-08-25T13:27:01.357281" elapsed="0.399103"/>
+</kw>
+<kw name="AND Upload KTP" owner="datadiri">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-25T13:27:04.756957" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-25T13:27:01.756384" elapsed="3.000573"/>
+</kw>
+<kw name="Choose File" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:04.756957" level="INFO">Sending D:\Document\My Project\Github\robot lelang mobil\lelangmobil\test_data\files_data\ktp.jpg to browser.</msg>
+<arg>${upload_KTP}</arg>
+<arg>${EXECDIR}/test_data/files_data/ktp.jpg</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:04.756957" elapsed="0.032723"/>
+</kw>
+<status status="PASS" start="2025-08-25T13:27:01.756384" elapsed="3.033296"/>
+</kw>
+<kw name="AND Fill &quot;Masa Berlaku KTP&quot; with value" owner="datadiri">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${checkbox_masaKTP}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-08-25T13:27:04.790681" elapsed="0.289245"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${checkbox_masaKTP}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-25T13:27:05.079926" elapsed="0.011836"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:05.091762" level="INFO">Clicking element '//input[@type='checkbox']'.</msg>
+<arg>${checkbox_masaKTP}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:05.091762" elapsed="0.049499"/>
+</kw>
+<status status="PASS" start="2025-08-25T13:27:04.790681" elapsed="0.351581"/>
+</kw>
+<kw name="AND Choose &quot;Kewarganegaraan&quot; as WNI" owner="datadiri">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${btn_selanjutnya}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-08-25T13:27:05.142262" elapsed="0.280632"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:05.422894" level="INFO">Clicking element '//button[normalize-space()='WNI']'.</msg>
+<arg>${btn_WNI}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:05.422894" elapsed="0.055721"/>
+</kw>
+<status status="PASS" start="2025-08-25T13:27:05.142262" elapsed="0.336353"/>
+</kw>
+<kw name="AND Fill &quot;Provinsi&quot; with value" owner="datadiri">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:05.480204" level="INFO">Typing text 'DKI Jakarta' into text field '//input[@aria-placeholder='Pilih Provinsi']'.</msg>
+<arg>${input_provinsi}</arg>
+<arg>${val}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:05.479672" elapsed="0.083613"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:05.564293" level="INFO">Sending key(s) ('ENTER',) to //input[@aria-placeholder='Pilih Provinsi'] element.</msg>
+<msg time="2025-08-25T13:27:05.861719" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-08-25T13:27:05.861719" level="INFO">Releasing special key ENTER.</msg>
+<arg>${input_provinsi}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-08-25T13:27:05.563285" elapsed="0.308957"/>
+</kw>
+<arg>${provinsi}</arg>
+<status status="PASS" start="2025-08-25T13:27:05.479672" elapsed="0.392570"/>
+</kw>
+<kw name="AND Fill &quot;Kota&quot; with value" owner="datadiri">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:05.873243" level="INFO">Typing text 'Kota Jakarta Pusat' into text field '//input[@aria-placeholder='Pilih Kota']'.</msg>
+<arg>${input_kota}</arg>
+<arg>${val}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:05.873243" elapsed="0.091125"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:05.964368" level="INFO">Sending key(s) ('ENTER',) to //input[@aria-placeholder='Pilih Kota'] element.</msg>
+<msg time="2025-08-25T13:27:06.237926" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-08-25T13:27:06.238229" level="INFO">Releasing special key ENTER.</msg>
+<arg>${input_kota}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-08-25T13:27:05.964368" elapsed="0.281936"/>
+</kw>
+<arg>${kota}</arg>
+<status status="PASS" start="2025-08-25T13:27:05.873243" elapsed="0.373061"/>
+</kw>
+<kw name="AND Fill &quot;Alamat Domisili&quot; with value" owner="datadiri">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:06.247287" level="INFO">Typing text 'Jl. Raya Kedaton No. 10 Jakarta Pusat' into text field '//label[contains(text(), 'Alamat Domisili')]/following-sibling::div//textarea'.</msg>
+<arg>${textarea_alamatDomisili}</arg>
+<arg>${val}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:06.247287" elapsed="0.095608"/>
+</kw>
+<kw name="Get Value" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:06.366817" level="INFO">${valCheck} = Jl. Raya Kedaton No. 10 Jakarta Pusat</msg>
+<var>${valCheck}</var>
+<arg>${textarea_alamatDomisili}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:06.343895" elapsed="0.022922"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${valCheck}</arg>
+<arg>${val}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-08-25T13:27:06.366817" elapsed="0.001000"/>
+</kw>
+<arg>${alamatDomisili}</arg>
+<status status="PASS" start="2025-08-25T13:27:06.247287" elapsed="0.120530"/>
+</kw>
+<kw name="AND Fill &quot;Nomor Telepon&quot; with value" owner="datadiri">
+<kw name="Generate Random String" owner="String">
+<msg time="2025-08-25T13:27:06.367817" level="INFO">${rand} = 112500</msg>
+<var>${rand}</var>
+<arg>6</arg>
+<arg>[NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-08-25T13:27:06.367817" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:06.368817" level="INFO">Typing text '08123112500' into text field '//input[@placeholder='Nomor Telepon']'.</msg>
+<arg>${input_noTelp}</arg>
+<arg>${val}${rand}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:06.367817" elapsed="0.093178"/>
+</kw>
+<kw name="Get Value" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:06.476076" level="INFO">${valCheck} = 08123112500</msg>
+<var>${valCheck}</var>
+<arg>${input_noTelp}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:06.462008" elapsed="0.014068"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${valCheck}</arg>
+<arg>${val}${rand}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-08-25T13:27:06.476076" elapsed="0.000000"/>
+</kw>
+<arg>${noTelp}</arg>
+<status status="PASS" start="2025-08-25T13:27:06.367817" elapsed="0.108259"/>
+</kw>
+<kw name="AND Choose &quot;Pekerjaan&quot; as" owner="datadiri">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${input_pekerjaan}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-08-25T13:27:06.477078" elapsed="0.285054"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:06.763138" level="INFO">Typing text 'PNS' into text field '//input[@aria-placeholder='Pilih Pekerjaan']'.</msg>
+<arg>${input_pekerjaan}</arg>
+<arg>${val}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:06.763138" elapsed="0.064265"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:06.828912" level="INFO">Sending key(s) ('ENTER',) to //input[@aria-placeholder='Pilih Pekerjaan'] element.</msg>
+<msg time="2025-08-25T13:27:07.104262" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-08-25T13:27:07.104262" level="INFO">Releasing special key ENTER.</msg>
+<arg>${input_pekerjaan}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-08-25T13:27:06.828912" elapsed="0.282858"/>
+</kw>
+<arg>${pekerjaan}</arg>
+<status status="PASS" start="2025-08-25T13:27:06.477078" elapsed="0.634692"/>
+</kw>
+<kw name="AND Fill &quot;Nama Perusahaan&quot; with value" owner="datadiri">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:07.112770" level="INFO">Typing text 'Logique' into text field '//input[@placeholder='Nama Perusahaan']'.</msg>
+<arg>${input_namaPerusahaan}</arg>
+<arg>${val}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:07.112770" elapsed="0.092246"/>
+</kw>
+<kw name="Get Value" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:07.218771" level="INFO">${valCheck} = Logique</msg>
+<var>${valCheck}</var>
+<arg>${input_namaPerusahaan}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:07.205016" elapsed="0.013755"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${valCheck}</arg>
+<arg>${val}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-08-25T13:27:07.219777" elapsed="0.000000"/>
+</kw>
+<arg>${namaPerusahaan}</arg>
+<status status="PASS" start="2025-08-25T13:27:07.112770" elapsed="0.107007"/>
+</kw>
+<kw name="AND Fill &quot;Alamat perusahaan&quot; with value" owner="datadiri">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:07.220776" level="INFO">Typing text 'Jl. Raya Kedaton No.15 Jakarta Selatan' into text field '//label[contains(text(), 'Alamat Perusahaan')]/following-sibling::div//textarea'.</msg>
+<arg>${textarea_alamatPerusahaan}</arg>
+<arg>${val}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:07.219777" elapsed="0.097991"/>
+</kw>
+<kw name="Get Value" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:07.335805" level="INFO">${valCheck} = Jl. Raya Kedaton No.15 Jakarta Selatan</msg>
+<var>${valCheck}</var>
+<arg>${textarea_alamatPerusahaan}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:07.317768" elapsed="0.018037"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${valCheck}</arg>
+<arg>${val}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-08-25T13:27:07.335805" elapsed="0.000000"/>
+</kw>
+<arg>${alamatPerusahaan}</arg>
+<status status="PASS" start="2025-08-25T13:27:07.219777" elapsed="0.116028"/>
+</kw>
+<kw name="AND Fill &quot;Nomor Telepon Perusahaan&quot; with value" owner="datadiri">
+<kw name="Generate Random String" owner="String">
+<msg time="2025-08-25T13:27:07.336803" level="INFO">${rand} = 877621</msg>
+<var>${rand}</var>
+<arg>6</arg>
+<arg>[NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-08-25T13:27:07.336803" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:07.336803" level="INFO">Typing text '0826877621' into text field '//input[@placeholder='Nomor Telepon Perusahaan']'.</msg>
+<arg>${input_noTelpPerusahaan}</arg>
+<arg>${val}${rand}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:07.336803" elapsed="0.091926"/>
+</kw>
+<kw name="Get Value" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:07.446147" level="INFO">${valCheck} = 0826877621</msg>
+<var>${valCheck}</var>
+<arg>${input_noTelpPerusahaan}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:07.428729" elapsed="0.017418"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${valCheck}</arg>
+<arg>${val}${rand}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-08-25T13:27:07.447146" elapsed="0.000000"/>
+</kw>
+<arg>${noTelpPerusahaan}</arg>
+<status status="PASS" start="2025-08-25T13:27:07.336803" elapsed="0.110343"/>
+</kw>
+<kw name="AND Choose NPWP as &quot;Tidak Ada&quot;" owner="datadiri">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:07.447146" level="INFO">Clicking button '//button[normalize-space()='Tidak Ada']'.</msg>
+<arg>${btn_tidakPunyaNPWP}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:07.447146" elapsed="0.115966"/>
+</kw>
+<status status="PASS" start="2025-08-25T13:27:07.447146" elapsed="0.115966"/>
+</kw>
+<kw name="AND Choose &quot;Jenis Kendaraan&quot; as" owner="datadiri">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${btn_selanjutnya}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-08-25T13:27:07.564112" elapsed="0.282179"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:07.846291" level="INFO">Typing text 'Mobil' into text field '//input[@aria-placeholder='Jenis Kendaraan']'.</msg>
+<arg>${input_kendaraan}</arg>
+<arg>${val}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:07.846291" elapsed="0.097315"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:07.944614" level="INFO">Sending key(s) ('ENTER',) to //input[@aria-placeholder='Jenis Kendaraan'] element.</msg>
+<msg time="2025-08-25T13:27:08.235093" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-08-25T13:27:08.236094" level="INFO">Releasing special key ENTER.</msg>
+<arg>${input_kendaraan}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-08-25T13:27:07.943606" elapsed="0.299538"/>
+</kw>
+<arg>${jenisKendaraan}</arg>
+<status status="PASS" start="2025-08-25T13:27:07.564112" elapsed="0.679032"/>
+</kw>
+<kw name="AND Choose &quot;Kendaraan yang dicari&quot; as" owner="datadiri">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:08.244144" level="INFO">Typing text 'Kendaraan Penumpang' into text field '//input[@aria-placeholder='Pilih Kendaraan']'.</msg>
+<arg>${input_kendaraanDiCari}</arg>
+<arg>${val}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:08.243144" elapsed="0.094563"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:08.337707" level="INFO">Sending key(s) ('ENTER',) to //input[@aria-placeholder='Pilih Kendaraan'] element.</msg>
+<msg time="2025-08-25T13:27:08.624697" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-08-25T13:27:08.624697" level="INFO">Releasing special key ENTER.</msg>
+<arg>${input_kendaraanDiCari}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-08-25T13:27:08.337707" elapsed="0.298094"/>
+</kw>
+<arg>${kendaraanDiCari}</arg>
+<status status="PASS" start="2025-08-25T13:27:08.243144" elapsed="0.392657"/>
+</kw>
+<kw name="AND Choose &quot;Tujuan Pembelian&quot; as" owner="datadiri">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:08.636801" level="INFO">Typing text 'Pribadi' into text field '//input[@aria-placeholder='Pilih Tujuan']'.</msg>
+<arg>${input_tujuanPembelian}</arg>
+<arg>${val}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:08.636801" elapsed="0.101156"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:08.738965" level="INFO">Sending key(s) ('ENTER',) to //input[@aria-placeholder='Pilih Tujuan'] element.</msg>
+<msg time="2025-08-25T13:27:09.012993" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-08-25T13:27:09.012993" level="INFO">Releasing special key ENTER.</msg>
+<arg>${input_tujuanPembelian}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-08-25T13:27:08.738965" elapsed="0.281553"/>
+</kw>
+<arg>${tujuanPembelian}</arg>
+<status status="PASS" start="2025-08-25T13:27:08.635801" elapsed="0.385702"/>
+</kw>
+<kw name="AND Fill email with value" owner="datadiri">
+<kw name="Generate Random String" owner="String">
+<msg time="2025-08-25T13:27:09.023502" level="INFO">${rand} = II5Q9Bn6eF</msg>
+<var>${rand}</var>
+<arg>10</arg>
+<arg>[LETTERS][NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.023502" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-08-25T13:27:09.023502" level="INFO">${EMAIL} = tahubulat-II5Q9Bn6eF@example.com</msg>
+<var>${EMAIL}</var>
+<arg>tahubulat-${rand}@example.com</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.023502" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="File Should Exist" owner="OperatingSystem">
+<msg time="2025-08-25T13:27:09.024501" level="INFO" html="true">File '&lt;a href="file://D:\Document\My Project\Github\robot lelang mobil\lelangmobil\test_data\data-auth.py"&gt;D:\Document\My Project\Github\robot lelang mobil\lelangmobil\test_data\data-auth.py&lt;/a&gt;' exists.</msg>
+<arg>${CREDS_PY}</arg>
+<doc>Fails unless the given ``path`` points to an existing file.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.023502" elapsed="0.000999"/>
+</kw>
+<msg time="2025-08-25T13:27:09.024501" level="INFO">${file_exists} = True</msg>
+<var>${file_exists}</var>
+<arg>File Should Exist</arg>
+<arg>${CREDS_PY}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.023502" elapsed="0.000999"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-08-25T13:27:09.024501" level="INFO">${newline} = 
+</msg>
+<var>${newline}</var>
+<arg>\n</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.024501" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="${file_exists}">
+<kw name="Get File" owner="OperatingSystem">
+<msg time="2025-08-25T13:27:09.024501" level="INFO" html="true">Getting file '&lt;a href="file://D:\Document\My Project\Github\robot lelang mobil\lelangmobil\test_data\data-auth.py"&gt;D:\Document\My Project\Github\robot lelang mobil\lelangmobil\test_data\data-auth.py&lt;/a&gt;'.</msg>
+<msg time="2025-08-25T13:27:09.025502" level="INFO">${existing_content} = data_email_qa  = "test@example.com"
+data_pass_qa = "YuvIuCwvUAhq16mZ"
+data_email_qa = "testajaya-RXLNupJD7d@example.com"
+
+data_pass_qa = "aZAZsUpgOxyh6cTe"</msg>
+<var>${existing_content}</var>
+<arg>${CREDS_PY}</arg>
+<arg>encoding=UTF-8</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.024501" elapsed="0.001001"/>
+</kw>
+<kw name="Split To Lines" owner="String">
+<msg time="2025-08-25T13:27:09.025502" level="INFO">5 lines returned</msg>
+<msg time="2025-08-25T13:27:09.025502" level="INFO">${lines} = ['data_email_qa  = "test@example.com"', 'data_pass_qa = "YuvIuCwvUAhq16mZ"', 'data_email_qa = "testajaya-RXLNupJD7d@example.com"', '', 'data_pass_qa = "aZAZsUpgOxyh6cTe"']</msg>
+<var>${lines}</var>
+<arg>${existing_content}</arg>
+<doc>Splits the given string to lines.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.025502" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-08-25T13:27:09.026501" level="INFO">${email_line_found} = False</msg>
+<var>${email_line_found}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.026501" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-08-25T13:27:09.026501" level="INFO">${updated_content} = </msg>
+<var>${updated_content}</var>
+<arg>${EMPTY}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.026501" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${line}</arg>
+<arg>data_email_qa</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.027501" elapsed="0.000000"/>
+</kw>
+<msg time="2025-08-25T13:27:09.027501" level="INFO">${is_email_line} = True</msg>
+<var>${is_email_line}</var>
+<arg>Should Contain</arg>
+<arg>${line}</arg>
+<arg>data_email_qa</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.027501" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="${is_email_line}">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-08-25T13:27:09.027501" level="INFO">${updated_content} = 
+data_email_qa = "tahubulat-II5Q9Bn6eF@example.com"</msg>
+<var>${updated_content}</var>
+<arg>SEPARATOR=${newline}</arg>
+<arg>${updated_content}</arg>
+<arg>data_email_qa = "${EMAIL}"</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.027501" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-08-25T13:27:09.027501" level="INFO">${email_line_found} = True</msg>
+<var>${email_line_found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.027501" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-08-25T13:27:09.027501" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Catenate" owner="BuiltIn">
+<var>${updated_content}</var>
+<arg>SEPARATOR=${newline}</arg>
+<arg>${updated_content}</arg>
+<arg>${line}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="NOT RUN" start="2025-08-25T13:27:09.027501" elapsed="0.001518"/>
+</kw>
+<status status="NOT RUN" start="2025-08-25T13:27:09.027501" elapsed="0.001518"/>
+</branch>
+<status status="PASS" start="2025-08-25T13:27:09.027501" elapsed="0.001518"/>
+</if>
+<var name="${line}">data_email_qa  = "test@example.com"</var>
+<status status="PASS" start="2025-08-25T13:27:09.027501" elapsed="0.001518"/>
+</iter>
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2025-08-25T13:27:09.029019" level="FAIL">'data_pass_qa = "YuvIuCwvUAhq16mZ"' does not contain 'data_email_qa'</msg>
+<arg>${line}</arg>
+<arg>data_email_qa</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2025-08-25T13:27:09.029019" elapsed="0.000000">'data_pass_qa = "YuvIuCwvUAhq16mZ"' does not contain 'data_email_qa'</status>
+</kw>
+<msg time="2025-08-25T13:27:09.030030" level="INFO">${is_email_line} = False</msg>
+<var>${is_email_line}</var>
+<arg>Should Contain</arg>
+<arg>${line}</arg>
+<arg>data_email_qa</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.029019" elapsed="0.001011"/>
+</kw>
+<if>
+<branch type="IF" condition="${is_email_line}">
+<kw name="Catenate" owner="BuiltIn">
+<var>${updated_content}</var>
+<arg>SEPARATOR=${newline}</arg>
+<arg>${updated_content}</arg>
+<arg>data_email_qa = "${EMAIL}"</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="NOT RUN" start="2025-08-25T13:27:09.030030" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${email_line_found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-08-25T13:27:09.030030" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-08-25T13:27:09.030030" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-08-25T13:27:09.030030" level="INFO">${updated_content} = 
+data_email_qa = "tahubulat-II5Q9Bn6eF@example.com"
+data_pass_qa = "YuvIuCwvUAhq16mZ"</msg>
+<var>${updated_content}</var>
+<arg>SEPARATOR=${newline}</arg>
+<arg>${updated_content}</arg>
+<arg>${line}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.030030" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-08-25T13:27:09.030030" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-08-25T13:27:09.030030" elapsed="0.000000"/>
+</if>
+<var name="${line}">data_pass_qa = "YuvIuCwvUAhq16mZ"</var>
+<status status="PASS" start="2025-08-25T13:27:09.029019" elapsed="0.001011"/>
+</iter>
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${line}</arg>
+<arg>data_email_qa</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.030030" elapsed="0.000999"/>
+</kw>
+<msg time="2025-08-25T13:27:09.031029" level="INFO">${is_email_line} = True</msg>
+<var>${is_email_line}</var>
+<arg>Should Contain</arg>
+<arg>${line}</arg>
+<arg>data_email_qa</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.030030" elapsed="0.000999"/>
+</kw>
+<if>
+<branch type="IF" condition="${is_email_line}">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-08-25T13:27:09.031029" level="INFO">${updated_content} = 
+data_email_qa = "tahubulat-II5Q9Bn6eF@example.com"
+data_pass_qa = "YuvIuCwvUAhq16mZ"
+data_email_qa = "tahubulat-II5Q9Bn6eF@example.com"</msg>
+<var>${updated_content}</var>
+<arg>SEPARATOR=${newline}</arg>
+<arg>${updated_content}</arg>
+<arg>data_email_qa = "${EMAIL}"</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.031029" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-08-25T13:27:09.031029" level="INFO">${email_line_found} = True</msg>
+<var>${email_line_found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.031029" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-08-25T13:27:09.031029" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Catenate" owner="BuiltIn">
+<var>${updated_content}</var>
+<arg>SEPARATOR=${newline}</arg>
+<arg>${updated_content}</arg>
+<arg>${line}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="NOT RUN" start="2025-08-25T13:27:09.031029" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-08-25T13:27:09.031029" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-08-25T13:27:09.031029" elapsed="0.000000"/>
+</if>
+<var name="${line}">data_email_qa = "testajaya-RXLNupJD7d@example.com"</var>
+<status status="PASS" start="2025-08-25T13:27:09.030030" elapsed="0.000999"/>
+</iter>
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2025-08-25T13:27:09.031029" level="FAIL">'' does not contain 'data_email_qa'</msg>
+<arg>${line}</arg>
+<arg>data_email_qa</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2025-08-25T13:27:09.031029" elapsed="0.000000">'' does not contain 'data_email_qa'</status>
+</kw>
+<msg time="2025-08-25T13:27:09.031029" level="INFO">${is_email_line} = False</msg>
+<var>${is_email_line}</var>
+<arg>Should Contain</arg>
+<arg>${line}</arg>
+<arg>data_email_qa</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.031029" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="${is_email_line}">
+<kw name="Catenate" owner="BuiltIn">
+<var>${updated_content}</var>
+<arg>SEPARATOR=${newline}</arg>
+<arg>${updated_content}</arg>
+<arg>data_email_qa = "${EMAIL}"</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="NOT RUN" start="2025-08-25T13:27:09.032535" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${email_line_found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-08-25T13:27:09.032535" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-08-25T13:27:09.032535" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-08-25T13:27:09.032535" level="INFO">${updated_content} = 
+data_email_qa = "tahubulat-II5Q9Bn6eF@example.com"
+data_pass_qa = "YuvIuCwvUAhq16mZ"
+data_email_qa = "tahubulat-II5Q9Bn6eF@example.com"
+</msg>
+<var>${updated_content}</var>
+<arg>SEPARATOR=${newline}</arg>
+<arg>${updated_content}</arg>
+<arg>${line}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.032535" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-08-25T13:27:09.032535" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-08-25T13:27:09.032535" elapsed="0.000000"/>
+</if>
+<var name="${line}"/>
+<status status="PASS" start="2025-08-25T13:27:09.031029" elapsed="0.001506"/>
+</iter>
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2025-08-25T13:27:09.033552" level="FAIL">'data_pass_qa = "aZAZsUpgOxyh6cTe"' does not contain 'data_email_qa'</msg>
+<arg>${line}</arg>
+<arg>data_email_qa</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2025-08-25T13:27:09.032535" elapsed="0.001017">'data_pass_qa = "aZAZsUpgOxyh6cTe"' does not contain 'data_email_qa'</status>
+</kw>
+<msg time="2025-08-25T13:27:09.033552" level="INFO">${is_email_line} = False</msg>
+<var>${is_email_line}</var>
+<arg>Should Contain</arg>
+<arg>${line}</arg>
+<arg>data_email_qa</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.032535" elapsed="0.001017"/>
+</kw>
+<if>
+<branch type="IF" condition="${is_email_line}">
+<kw name="Catenate" owner="BuiltIn">
+<var>${updated_content}</var>
+<arg>SEPARATOR=${newline}</arg>
+<arg>${updated_content}</arg>
+<arg>data_email_qa = "${EMAIL}"</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="NOT RUN" start="2025-08-25T13:27:09.033552" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${email_line_found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-08-25T13:27:09.033552" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-08-25T13:27:09.033552" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-08-25T13:27:09.033552" level="INFO">${updated_content} = 
+data_email_qa = "tahubulat-II5Q9Bn6eF@example.com"
+data_pass_qa = "YuvIuCwvUAhq16mZ"
+data_email_qa = "tahubulat-II5Q9Bn6eF@example.com"
+
+data_pass_qa = "aZAZsUpgOxyh6cTe"</msg>
+<var>${updated_content}</var>
+<arg>SEPARATOR=${newline}</arg>
+<arg>${updated_content}</arg>
+<arg>${line}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.033552" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-08-25T13:27:09.033552" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-08-25T13:27:09.033552" elapsed="0.000000"/>
+</if>
+<var name="${line}">data_pass_qa = "aZAZsUpgOxyh6cTe"</var>
+<status status="PASS" start="2025-08-25T13:27:09.032535" elapsed="0.001017"/>
+</iter>
+<var>${line}</var>
+<value>@{lines}</value>
+<status status="PASS" start="2025-08-25T13:27:09.027501" elapsed="0.006051"/>
+</for>
+<if>
+<branch type="IF" condition="not ${email_line_found}">
+<kw name="Catenate" owner="BuiltIn">
+<var>${updated_content}</var>
+<arg>SEPARATOR=${newline}</arg>
+<arg>${updated_content}</arg>
+<arg>data_email_qa = "${EMAIL}"</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="NOT RUN" start="2025-08-25T13:27:09.033552" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-08-25T13:27:09.033552" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-08-25T13:27:09.033552" elapsed="0.000000"/>
+</if>
+<kw name="Create File" owner="OperatingSystem">
+<msg time="2025-08-25T13:27:09.034549" level="INFO" html="true">Created file '&lt;a href="file://D:\Document\My Project\Github\robot lelang mobil\lelangmobil\test_data\data-auth.py"&gt;D:\Document\My Project\Github\robot lelang mobil\lelangmobil\test_data\data-auth.py&lt;/a&gt;'.</msg>
+<arg>${CREDS_PY}</arg>
+<arg>${updated_content}${newline}</arg>
+<arg>encoding=UTF-8</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.034549" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-08-25T13:27:09.024501" elapsed="0.010048"/>
+</branch>
+<branch type="ELSE">
+<kw name="Catenate" owner="BuiltIn">
+<var>${content}</var>
+<arg>SEPARATOR=</arg>
+<arg>data_email_qa = "${EMAIL}"${newline}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="NOT RUN" start="2025-08-25T13:27:09.034549" elapsed="0.000000"/>
+</kw>
+<kw name="Create File" owner="OperatingSystem">
+<arg>${CREDS_PY}</arg>
+<arg>${content}</arg>
+<arg>encoding=UTF-8</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<status status="NOT RUN" start="2025-08-25T13:27:09.034549" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-08-25T13:27:09.034549" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-08-25T13:27:09.024501" elapsed="0.011050"/>
+</if>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:09.035551" level="INFO">Typing text 'tahubulat-II5Q9Bn6eF@example.com' into text field '//input[@placeholder='Email']'.</msg>
+<arg>${input_emailRegis}</arg>
+<arg>tahubulat-${rand}@example.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.035551" elapsed="0.100813"/>
+</kw>
+<kw name="Get Value" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:09.152748" level="INFO">${valCheck} = tahubulat-II5Q9Bn6eF@example.com</msg>
+<var>${valCheck}</var>
+<arg>${input_emailRegis}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.137717" elapsed="0.015031"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${valCheck}</arg>
+<arg>tahubulat-${rand}@example.com</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.152748" elapsed="0.000000"/>
+</kw>
+<arg>${data_email_qa}</arg>
+<status status="PASS" start="2025-08-25T13:27:09.022502" elapsed="0.130246"/>
+</kw>
+<kw name="AND Fill &quot;Kata sandi&quot; and &quot;Konfirmasi&quot; with value" owner="datadiri">
+<kw name="Generate Random String" owner="String">
+<msg time="2025-08-25T13:27:09.153748" level="INFO">${PASSWORD} = G5rokB5u7JZ4Bka2</msg>
+<var>${PASSWORD}</var>
+<arg>16</arg>
+<arg>[LETTERS][NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.153748" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="File Should Exist" owner="OperatingSystem">
+<msg time="2025-08-25T13:27:09.154749" level="INFO" html="true">File '&lt;a href="file://D:\Document\My Project\Github\robot lelang mobil\lelangmobil\test_data\data-auth.py"&gt;D:\Document\My Project\Github\robot lelang mobil\lelangmobil\test_data\data-auth.py&lt;/a&gt;' exists.</msg>
+<arg>${CREDS_PY}</arg>
+<doc>Fails unless the given ``path`` points to an existing file.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.154749" elapsed="0.000000"/>
+</kw>
+<msg time="2025-08-25T13:27:09.154749" level="INFO">${file_exists} = True</msg>
+<var>${file_exists}</var>
+<arg>File Should Exist</arg>
+<arg>${CREDS_PY}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.154749" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-08-25T13:27:09.154749" level="INFO">${newline} = 
+</msg>
+<var>${newline}</var>
+<arg>\n</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.154749" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="${file_exists}">
+<kw name="Get File" owner="OperatingSystem">
+<msg time="2025-08-25T13:27:09.155751" level="INFO" html="true">Getting file '&lt;a href="file://D:\Document\My Project\Github\robot lelang mobil\lelangmobil\test_data\data-auth.py"&gt;D:\Document\My Project\Github\robot lelang mobil\lelangmobil\test_data\data-auth.py&lt;/a&gt;'.</msg>
+<msg time="2025-08-25T13:27:09.158745" level="INFO">${existing_content} = 
+data_email_qa = "tahubulat-II5Q9Bn6eF@example.com"
+data_pass_qa = "YuvIuCwvUAhq16mZ"
+data_email_qa = "tahubulat-II5Q9Bn6eF@example.com"
+
+data_pass_qa = "aZAZsUpgOxyh6cTe"
+</msg>
+<var>${existing_content}</var>
+<arg>${CREDS_PY}</arg>
+<arg>encoding=UTF-8</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.154749" elapsed="0.004506"/>
+</kw>
+<kw name="Split To Lines" owner="String">
+<msg time="2025-08-25T13:27:09.159255" level="INFO">6 lines returned</msg>
+<msg time="2025-08-25T13:27:09.159255" level="INFO">${lines} = ['', 'data_email_qa = "tahubulat-II5Q9Bn6eF@example.com"', 'data_pass_qa = "YuvIuCwvUAhq16mZ"', 'data_email_qa = "tahubulat-II5Q9Bn6eF@example.com"', '', 'data_pass_qa = "aZAZsUpgOxyh6cTe"']</msg>
+<var>${lines}</var>
+<arg>${existing_content}</arg>
+<doc>Splits the given string to lines.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.159255" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-08-25T13:27:09.159255" level="INFO">${password_line_found} = False</msg>
+<var>${password_line_found}</var>
+<arg>False</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.159255" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-08-25T13:27:09.160260" level="INFO">${updated_content} = </msg>
+<var>${updated_content}</var>
+<arg>${EMPTY}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.159255" elapsed="0.001005"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2025-08-25T13:27:09.160260" level="FAIL">'' does not contain 'data_pass_qa'</msg>
+<arg>${line}</arg>
+<arg>data_pass_qa</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2025-08-25T13:27:09.160260" elapsed="0.000000">'' does not contain 'data_pass_qa'</status>
+</kw>
+<msg time="2025-08-25T13:27:09.160260" level="INFO">${is_password_line} = False</msg>
+<var>${is_password_line}</var>
+<arg>Should Contain</arg>
+<arg>${line}</arg>
+<arg>data_pass_qa</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.160260" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="${is_password_line}">
+<kw name="Catenate" owner="BuiltIn">
+<var>${updated_content}</var>
+<arg>SEPARATOR=${newline}</arg>
+<arg>${updated_content}</arg>
+<arg>data_pass_qa = "${PASSWORD}"</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="NOT RUN" start="2025-08-25T13:27:09.161259" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${password_line_found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-08-25T13:27:09.161259" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-08-25T13:27:09.160260" elapsed="0.000999"/>
+</branch>
+<branch type="ELSE">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-08-25T13:27:09.161259" level="INFO">${updated_content} = 
+</msg>
+<var>${updated_content}</var>
+<arg>SEPARATOR=${newline}</arg>
+<arg>${updated_content}</arg>
+<arg>${line}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.161259" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-08-25T13:27:09.161259" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-08-25T13:27:09.160260" elapsed="0.000999"/>
+</if>
+<var name="${line}"/>
+<status status="PASS" start="2025-08-25T13:27:09.160260" elapsed="0.000999"/>
+</iter>
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2025-08-25T13:27:09.161259" level="FAIL">'data_email_qa = "tahubulat-II5Q9Bn6eF@example.com"' does not contain 'data_pass_qa'</msg>
+<arg>${line}</arg>
+<arg>data_pass_qa</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2025-08-25T13:27:09.161259" elapsed="0.000000">'data_email_qa = "tahubulat-II5Q9Bn6eF@example.com"' does not contain 'data_pass_qa'</status>
+</kw>
+<msg time="2025-08-25T13:27:09.161259" level="INFO">${is_password_line} = False</msg>
+<var>${is_password_line}</var>
+<arg>Should Contain</arg>
+<arg>${line}</arg>
+<arg>data_pass_qa</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.161259" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="${is_password_line}">
+<kw name="Catenate" owner="BuiltIn">
+<var>${updated_content}</var>
+<arg>SEPARATOR=${newline}</arg>
+<arg>${updated_content}</arg>
+<arg>data_pass_qa = "${PASSWORD}"</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="NOT RUN" start="2025-08-25T13:27:09.162261" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${password_line_found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-08-25T13:27:09.162261" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-08-25T13:27:09.162261" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-08-25T13:27:09.162261" level="INFO">${updated_content} = 
+
+data_email_qa = "tahubulat-II5Q9Bn6eF@example.com"</msg>
+<var>${updated_content}</var>
+<arg>SEPARATOR=${newline}</arg>
+<arg>${updated_content}</arg>
+<arg>${line}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.162261" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-08-25T13:27:09.162261" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-08-25T13:27:09.162261" elapsed="0.000000"/>
+</if>
+<var name="${line}">data_email_qa = "tahubulat-II5Q9Bn6eF@example.com"</var>
+<status status="PASS" start="2025-08-25T13:27:09.161259" elapsed="0.001002"/>
+</iter>
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${line}</arg>
+<arg>data_pass_qa</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.162261" elapsed="0.000000"/>
+</kw>
+<msg time="2025-08-25T13:27:09.163259" level="INFO">${is_password_line} = True</msg>
+<var>${is_password_line}</var>
+<arg>Should Contain</arg>
+<arg>${line}</arg>
+<arg>data_pass_qa</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.162261" elapsed="0.000998"/>
+</kw>
+<if>
+<branch type="IF" condition="${is_password_line}">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-08-25T13:27:09.163259" level="INFO">${updated_content} = 
+
+data_email_qa = "tahubulat-II5Q9Bn6eF@example.com"
+data_pass_qa = "G5rokB5u7JZ4Bka2"</msg>
+<var>${updated_content}</var>
+<arg>SEPARATOR=${newline}</arg>
+<arg>${updated_content}</arg>
+<arg>data_pass_qa = "${PASSWORD}"</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.163259" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-08-25T13:27:09.163259" level="INFO">${password_line_found} = True</msg>
+<var>${password_line_found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.163259" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-08-25T13:27:09.163259" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Catenate" owner="BuiltIn">
+<var>${updated_content}</var>
+<arg>SEPARATOR=${newline}</arg>
+<arg>${updated_content}</arg>
+<arg>${line}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="NOT RUN" start="2025-08-25T13:27:09.163259" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-08-25T13:27:09.163259" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-08-25T13:27:09.163259" elapsed="0.000000"/>
+</if>
+<var name="${line}">data_pass_qa = "YuvIuCwvUAhq16mZ"</var>
+<status status="PASS" start="2025-08-25T13:27:09.162261" elapsed="0.000998"/>
+</iter>
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2025-08-25T13:27:09.163259" level="FAIL">'data_email_qa = "tahubulat-II5Q9Bn6eF@example.com"' does not contain 'data_pass_qa'</msg>
+<arg>${line}</arg>
+<arg>data_pass_qa</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2025-08-25T13:27:09.163259" elapsed="0.000000">'data_email_qa = "tahubulat-II5Q9Bn6eF@example.com"' does not contain 'data_pass_qa'</status>
+</kw>
+<msg time="2025-08-25T13:27:09.164259" level="INFO">${is_password_line} = False</msg>
+<var>${is_password_line}</var>
+<arg>Should Contain</arg>
+<arg>${line}</arg>
+<arg>data_pass_qa</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.163259" elapsed="0.001000"/>
+</kw>
+<if>
+<branch type="IF" condition="${is_password_line}">
+<kw name="Catenate" owner="BuiltIn">
+<var>${updated_content}</var>
+<arg>SEPARATOR=${newline}</arg>
+<arg>${updated_content}</arg>
+<arg>data_pass_qa = "${PASSWORD}"</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="NOT RUN" start="2025-08-25T13:27:09.164259" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${password_line_found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-08-25T13:27:09.164259" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-08-25T13:27:09.164259" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-08-25T13:27:09.164259" level="INFO">${updated_content} = 
+
+data_email_qa = "tahubulat-II5Q9Bn6eF@example.com"
+data_pass_qa = "G5rokB5u7JZ4Bka2"
+data_email_qa = "tahubulat-II5Q9Bn6eF@example.com"</msg>
+<var>${updated_content}</var>
+<arg>SEPARATOR=${newline}</arg>
+<arg>${updated_content}</arg>
+<arg>${line}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.164259" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-08-25T13:27:09.164259" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-08-25T13:27:09.164259" elapsed="0.000000"/>
+</if>
+<var name="${line}">data_email_qa = "tahubulat-II5Q9Bn6eF@example.com"</var>
+<status status="PASS" start="2025-08-25T13:27:09.163259" elapsed="0.001000"/>
+</iter>
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2025-08-25T13:27:09.165259" level="FAIL">'' does not contain 'data_pass_qa'</msg>
+<arg>${line}</arg>
+<arg>data_pass_qa</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2025-08-25T13:27:09.164259" elapsed="0.001000">'' does not contain 'data_pass_qa'</status>
+</kw>
+<msg time="2025-08-25T13:27:09.165259" level="INFO">${is_password_line} = False</msg>
+<var>${is_password_line}</var>
+<arg>Should Contain</arg>
+<arg>${line}</arg>
+<arg>data_pass_qa</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.164259" elapsed="0.001000"/>
+</kw>
+<if>
+<branch type="IF" condition="${is_password_line}">
+<kw name="Catenate" owner="BuiltIn">
+<var>${updated_content}</var>
+<arg>SEPARATOR=${newline}</arg>
+<arg>${updated_content}</arg>
+<arg>data_pass_qa = "${PASSWORD}"</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="NOT RUN" start="2025-08-25T13:27:09.165259" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${password_line_found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-08-25T13:27:09.165259" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-08-25T13:27:09.165259" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-08-25T13:27:09.165259" level="INFO">${updated_content} = 
+
+data_email_qa = "tahubulat-II5Q9Bn6eF@example.com"
+data_pass_qa = "G5rokB5u7JZ4Bka2"
+data_email_qa = "tahubulat-II5Q9Bn6eF@example.com"
+</msg>
+<var>${updated_content}</var>
+<arg>SEPARATOR=${newline}</arg>
+<arg>${updated_content}</arg>
+<arg>${line}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.165259" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-08-25T13:27:09.165259" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-08-25T13:27:09.165259" elapsed="0.000000"/>
+</if>
+<var name="${line}"/>
+<status status="PASS" start="2025-08-25T13:27:09.164259" elapsed="0.001000"/>
+</iter>
+<iter>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${line}</arg>
+<arg>data_pass_qa</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.166260" elapsed="0.000000"/>
+</kw>
+<msg time="2025-08-25T13:27:09.166260" level="INFO">${is_password_line} = True</msg>
+<var>${is_password_line}</var>
+<arg>Should Contain</arg>
+<arg>${line}</arg>
+<arg>data_pass_qa</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.165259" elapsed="0.001001"/>
+</kw>
+<if>
+<branch type="IF" condition="${is_password_line}">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2025-08-25T13:27:09.166260" level="INFO">${updated_content} = 
+
+data_email_qa = "tahubulat-II5Q9Bn6eF@example.com"
+data_pass_qa = "G5rokB5u7JZ4Bka2"
+data_email_qa = "tahubulat-II5Q9Bn6eF@example.com"
+
+data_pass_qa = "G5rokB5u7JZ4Bka2"</msg>
+<var>${updated_content}</var>
+<arg>SEPARATOR=${newline}</arg>
+<arg>${updated_content}</arg>
+<arg>data_pass_qa = "${PASSWORD}"</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.166260" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-08-25T13:27:09.166260" level="INFO">${password_line_found} = True</msg>
+<var>${password_line_found}</var>
+<arg>True</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.166260" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-08-25T13:27:09.166260" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Catenate" owner="BuiltIn">
+<var>${updated_content}</var>
+<arg>SEPARATOR=${newline}</arg>
+<arg>${updated_content}</arg>
+<arg>${line}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="NOT RUN" start="2025-08-25T13:27:09.166260" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-08-25T13:27:09.166260" elapsed="0.001003"/>
+</branch>
+<status status="PASS" start="2025-08-25T13:27:09.166260" elapsed="0.001003"/>
+</if>
+<var name="${line}">data_pass_qa = "aZAZsUpgOxyh6cTe"</var>
+<status status="PASS" start="2025-08-25T13:27:09.165259" elapsed="0.002004"/>
+</iter>
+<var>${line}</var>
+<value>@{lines}</value>
+<status status="PASS" start="2025-08-25T13:27:09.160260" elapsed="0.007003"/>
+</for>
+<if>
+<branch type="IF" condition="not ${password_line_found}">
+<kw name="Catenate" owner="BuiltIn">
+<var>${updated_content}</var>
+<arg>SEPARATOR=${newline}</arg>
+<arg>${updated_content}</arg>
+<arg>data_pass_qa = "${PASSWORD}"</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="NOT RUN" start="2025-08-25T13:27:09.167263" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-08-25T13:27:09.167263" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-08-25T13:27:09.167263" elapsed="0.000000"/>
+</if>
+<kw name="Create File" owner="OperatingSystem">
+<msg time="2025-08-25T13:27:09.167263" level="INFO" html="true">Created file '&lt;a href="file://D:\Document\My Project\Github\robot lelang mobil\lelangmobil\test_data\data-auth.py"&gt;D:\Document\My Project\Github\robot lelang mobil\lelangmobil\test_data\data-auth.py&lt;/a&gt;'.</msg>
+<arg>${CREDS_PY}</arg>
+<arg>${updated_content}${newline}</arg>
+<arg>encoding=UTF-8</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.167263" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-08-25T13:27:09.154749" elapsed="0.012514"/>
+</branch>
+<branch type="ELSE">
+<kw name="Catenate" owner="BuiltIn">
+<var>${content}</var>
+<arg>SEPARATOR=</arg>
+<arg>data_pass_qa = "${PASSWORD}"${newline}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="NOT RUN" start="2025-08-25T13:27:09.168789" elapsed="0.000000"/>
+</kw>
+<kw name="Create File" owner="OperatingSystem">
+<arg>${CREDS_PY}</arg>
+<arg>${content}</arg>
+<arg>encoding=UTF-8</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<status status="NOT RUN" start="2025-08-25T13:27:09.168789" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-08-25T13:27:09.167263" elapsed="0.001526"/>
+</branch>
+<status status="PASS" start="2025-08-25T13:27:09.154749" elapsed="0.014040"/>
+</if>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:09.168789" level="INFO">Typing text 'G5rokB5u7JZ4Bka2' into text field '//input[@placeholder='Masukkan Kata Sandi Baru']'.</msg>
+<arg>${input_passwordRegis}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.168789" elapsed="0.086949"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:09.256749" level="INFO">Typing text 'G5rokB5u7JZ4Bka2' into text field '//input[@placeholder='Masukkan Ulang Kata Sandi Baru']'.</msg>
+<arg>${input_passwordRegisConfirm}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.256749" elapsed="0.080311"/>
+</kw>
+<kw name="Get Value" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:09.351735" level="INFO">${valCheck1} = G5rokB5u7JZ4Bka2</msg>
+<var>${valCheck1}</var>
+<arg>${input_passwordRegis}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.337060" elapsed="0.014675"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${valCheck1}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.351735" elapsed="0.000000"/>
+</kw>
+<kw name="Get Value" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:09.363809" level="INFO">${valCheck2} = G5rokB5u7JZ4Bka2</msg>
+<var>${valCheck2}</var>
+<arg>${input_passwordRegisConfirm}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.352736" elapsed="0.011073"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${valCheck2}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.363809" elapsed="0.000000"/>
+</kw>
+<arg>${data_pass_qa}</arg>
+<status status="PASS" start="2025-08-25T13:27:09.153748" elapsed="0.210061"/>
+</kw>
+<kw name="AND The user clicks &quot;Selanjutnya&quot;" owner="datadiri">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:09.364810" level="INFO">Clicking button '//button[normalize-space()='Selanjutnya']'.</msg>
+<arg>${btn_selanjutnya}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.364810" elapsed="0.098007"/>
+</kw>
+<status status="PASS" start="2025-08-25T13:27:09.364810" elapsed="0.098007"/>
+</kw>
+<kw name="AND Fill &quot;Nomor rekening&quot; with value" owner="databayar">
+<kw name="Generate Random String" owner="String">
+<msg time="2025-08-25T13:27:09.463818" level="INFO">${rand} = 720613</msg>
+<var>${rand}</var>
+<arg>6</arg>
+<arg>[NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.462817" elapsed="0.001001"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${input_noRek}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.463818" elapsed="0.229120"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:09.692938" level="INFO">Typing text '1234720613' into text field '//input[contains(@placeholder,'Nomor Rekening')]'.</msg>
+<arg>${input_noRek}</arg>
+<arg>${val}${rand}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.692938" elapsed="0.065842"/>
+</kw>
+<kw name="Get Value" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:09.773471" level="INFO">${valCheck} = 1234720613</msg>
+<var>${valCheck}</var>
+<arg>${input_noRek}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.759947" elapsed="0.013524"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${valCheck}</arg>
+<arg>${val}${rand}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.773471" elapsed="0.000000"/>
+</kw>
+<arg>${noRek}</arg>
+<status status="PASS" start="2025-08-25T13:27:09.462817" elapsed="0.310654"/>
+</kw>
+<kw name="AND Choose &quot;Bank&quot; as" owner="databayar">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:09.774470" level="INFO">Typing text 'BNI' into text field '//input[@aria-placeholder='Pilih Bank']'.</msg>
+<arg>${input_bank}</arg>
+<arg>${val}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.774470" elapsed="0.089953"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:09.865420" level="INFO">Sending key(s) ('ENTER',) to //input[@aria-placeholder='Pilih Bank'] element.</msg>
+<msg time="2025-08-25T13:27:10.137242" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-08-25T13:27:10.137242" level="INFO">Releasing special key ENTER.</msg>
+<arg>${input_bank}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-08-25T13:27:09.864423" elapsed="0.284329"/>
+</kw>
+<arg>${bank}</arg>
+<status status="PASS" start="2025-08-25T13:27:09.774470" elapsed="0.374282"/>
+</kw>
+<kw name="AND Fill &quot;Nama pemilik rekening&quot; with value" owner="databayar">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:10.150135" level="INFO">Typing text 'Logique Test' into text field '//input[contains(@placeholder,'Nama Pemilik Rekening')]'.</msg>
+<arg>${input_namaPemilikRekening}</arg>
+<arg>${val}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:10.150135" elapsed="0.083863"/>
+</kw>
+<arg>${namaPemilikBank}</arg>
+<status status="PASS" start="2025-08-25T13:27:10.148752" elapsed="0.085246"/>
+</kw>
+<kw name="AND Choose Sumber dana as" owner="databayar">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:10.234995" level="INFO">Typing text 'Usaha' into text field '//input[@aria-placeholder='Pilih Sumber Tabungan']'.</msg>
+<arg>${input_sumberDana}</arg>
+<arg>${val}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:10.234995" elapsed="0.089862"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:10.325849" level="INFO">Sending key(s) ('ENTER',) to //input[@aria-placeholder='Pilih Sumber Tabungan'] element.</msg>
+<msg time="2025-08-25T13:27:10.603842" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-08-25T13:27:10.603842" level="INFO">Releasing special key ENTER.</msg>
+<arg>${input_sumberDana}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-08-25T13:27:10.325849" elapsed="0.285169"/>
+</kw>
+<arg>${sumberDana}</arg>
+<status status="PASS" start="2025-08-25T13:27:10.234995" elapsed="0.376023"/>
+</kw>
+<kw name="AND Choose &quot;metode pembayaran&quot; as" owner="databayar">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:10.612017" level="INFO">Typing text 'Debit' into text field '//input[contains(@aria-placeholder,'Pilih Metode Pembayaran')]'.</msg>
+<arg>${input_metodeBayar}</arg>
+<arg>${val}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:10.612017" elapsed="0.074224"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:10.687246" level="INFO">Sending key(s) ('ENTER',) to //input[contains(@aria-placeholder,'Pilih Metode Pembayaran')] element.</msg>
+<msg time="2025-08-25T13:27:10.965946" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-08-25T13:27:10.965946" level="INFO">Releasing special key ENTER.</msg>
+<arg>${input_metodeBayar}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-08-25T13:27:10.687246" elapsed="0.284871"/>
+</kw>
+<arg>${metodeBayar}</arg>
+<status status="PASS" start="2025-08-25T13:27:10.612017" elapsed="0.360100"/>
+</kw>
+<kw name="AND Click “Daftar”" owner="databayar">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:10.973114" level="INFO">Clicking element '//button[normalize-space()='Daftar']'.</msg>
+<arg>${btn_daftarForm}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:10.973114" elapsed="0.099672"/>
+</kw>
+<status status="PASS" start="2025-08-25T13:27:10.972117" elapsed="0.100669"/>
+</kw>
+<kw name="THEN The Data inputs are saved and email validation is sended" owner="databayar">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${toast_berhasilDaftar}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-25T13:27:11.073788" elapsed="0.451822"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:11.540278" level="INFO">Element '//div[contains(text(), 'Data baru berhasil ditambahkan')]' is displayed.</msg>
+<arg>${toast_berhasilDaftar}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-25T13:27:11.525610" elapsed="0.014668"/>
+</kw>
+<status status="PASS" start="2025-08-25T13:27:11.073788" elapsed="0.466490"/>
+</kw>
+<kw name="AND User will redirect to login page" owner="databayar">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:11.562120" level="INFO">Element '//input[@type='email']' is displayed.</msg>
+<arg>${field_email}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-25T13:27:11.541276" elapsed="0.020844"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:11.587163" level="INFO">Element '//input[@type='password']' is displayed.</msg>
+<arg>${field_password}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-25T13:27:11.563119" elapsed="0.024044"/>
+</kw>
+<status status="PASS" start="2025-08-25T13:27:11.540278" elapsed="0.046885"/>
+</kw>
+<status status="PASS" start="2025-08-25T13:26:55.083740" elapsed="16.503423"/>
+</test>
+<status status="PASS" start="2025-08-25T13:26:54.925831" elapsed="16.661332"/>
+</suite>
+<suite id="s1-s2" name="2-Login" source="D:\Document\My Project\Github\robot lelang mobil\lelangmobil\tests\2-login.robot">
+<test id="s1-s2-t1" name="Login with valid credentials" line="6">
+<kw name="GIVEN Access Lelang Mobilku site" owner="login">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:11.598758" level="INFO">Opening browser 'chrome' to base url 'https://jkt:RsonSmW7UgLUKm9@auction.lelangmobilku.co.id/login'.</msg>
+<arg>${login_URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-25T13:27:11.597252" elapsed="4.394050"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-25T13:27:15.991302" elapsed="0.048704"/>
+</kw>
+<status status="PASS" start="2025-08-25T13:27:11.597252" elapsed="4.442754"/>
+</kw>
+<kw name="WHEN Input form login" owner="login">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${field_email}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-25T13:27:16.040006" elapsed="0.039342"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:16.080357" level="INFO">Typing text 'testajaya-RXLNupJD7d@example.com' into text field '//input[@type='email']'.</msg>
+<arg>${field_email}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:16.079348" elapsed="0.261789"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:16.341137" level="INFO">Typing text 'aZAZsUpgOxyh6cTe' into text field '//input[@type='password']'.</msg>
+<arg>${field_password}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:16.341137" elapsed="0.078868"/>
+</kw>
+<arg>${data_email_qa}</arg>
+<arg>${data_pass_qa}</arg>
+<status status="PASS" start="2025-08-25T13:27:16.040006" elapsed="0.379999"/>
+</kw>
+<kw name="AND Click captcha" owner="login">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${frame_recaptcha}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-25T13:27:16.421035" elapsed="0.016751"/>
+</kw>
+<kw name="Select Frame" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:16.438788" level="INFO">Selecting frame '//iframe[contains(@title, 'reCAPTCHA')]'.</msg>
+<arg>${frame_recaptcha}</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<status status="PASS" start="2025-08-25T13:27:16.437786" elapsed="0.024997"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${checkbox_captcha}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-25T13:27:16.462783" elapsed="0.019063"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:16.482863" level="INFO">Clicking element '//div[@class='recaptcha-checkbox-border']'.</msg>
+<arg>${checkbox_captcha}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:16.482863" elapsed="0.125937"/>
+</kw>
+<kw name="Unselect Frame" owner="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" start="2025-08-25T13:27:16.608800" elapsed="0.011232"/>
+</kw>
+<status status="PASS" start="2025-08-25T13:27:16.420521" elapsed="0.199511"/>
+</kw>
+<kw name="AND Click Syarat dan Ketentuan" owner="login">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:16.621033" level="INFO">Clicking button '//input[@id='remember_me']'.</msg>
+<arg>${checkbox_syarat}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-25T13:27:16.621033" elapsed="0.087564"/>
+</kw>
+<status status="PASS" start="2025-08-25T13:27:16.620032" elapsed="0.088565"/>
+</kw>
+<kw name="AND Click Button Login" owner="login">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${btn_login}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-25T13:27:16.709902" elapsed="0.024090"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-25T13:27:19.734437" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-25T13:27:16.733992" elapsed="3.000445"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-25T13:27:19.734947" level="INFO">Clicking element '//button[text()='Masuk']'.</msg>
+<msg time="2025-08-25T13:27:21.128831" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-08-25T13:27:21.128831" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="bg-primary hover:bg-amber-400 text-black leading-none transition-colors duration-300 py-3.5 px-2  rounded disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center w-32 py-3.5 font-bold"&gt;...&lt;/button&gt; is not clickable at point (304, 660). Other element would receive the click: &lt;iframe title="recaptcha challenge expires in two minutes" name="c-jli3o6fwj73f" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="https://www.google.com/recaptcha/api2/bframe?hl=en&amp;amp;v=_mscDd1KHr60EWWbt2I_ULP0&amp;amp;k=6LeLx4wiAAAAAPVS2eKakVC5Dfvv_atnZfsW5Y04&amp;amp;bft=0dAFcWeA4CENgWushfQCCSgONIUSxmPZvXJk1o22wKM56xPe5lHNB7wvtRR73dBIXVM6WLRvrpUWB3nDrfq1ItpY87bL2xYOSUoA" style="width: 400px; height: 580px;"&gt;&lt;/iframe&gt;
+  (Session info: chrome=139.0.7258.139)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff770df78d5+2802741]
+	GetHandleVerifier [0x0x7ff770b5eb70+79568]
+	(No symbol) [0x0x7ff7708fc0fa]
+	(No symbol) [0x0x7ff77095aaa9]
+	(No symbol) [0x0x7ff770958442]
+	(No symbol) [0x0x7ff770955481]
+	(No symbol) [0x0x7ff770954371]
+	(No symbol) [0x0x7ff770945bb8]
+	(No symbol) [0x0x7ff77097ac8a]
+	(No symbol) [0x0x7ff770945466]
+	(No symbol) [0x0x7ff77097aea0]
+	(No symbol) [0x0x7ff7709a2e24]
+	(No symbol) [0x0x7ff77097aa63]
+	(No symbol) [0x0x7ff770943c91]
+	(No symbol) [0x0x7ff770944a23]
+	GetHandleVerifier [0x0x7ff770e22ced+2979917]
+	GetHandleVerifier [0x0x7ff770e1d0f3+2956371]
+	GetHandleVerifier [0x0x7ff770e3acbd+3078173]
+	GetHandleVerifier [0x0x7ff770b7836e+184014]
+	GetHandleVerifier [0x0x7ff770b8024f+216495]
+	GetHandleVerifier [0x0x7ff770b670c4+113700]
+	GetHandleVerifier [0x0x7ff770b67279+114137]
+	GetHandleVerifier [0x0x7ff770b4df78+10968]
+	BaseThreadInitThunk [0x0x7ffa9cdce8d7+23]
+	RtlUserThreadStart [0x0x7ffa9dabc34c+44]
+</msg>
+<arg>${btn_login}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2025-08-25T13:27:19.734947" elapsed="1.399203">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="bg-primary hover:bg-amber-400 text-black leading-none transition-colors duration-300 py-3.5 px-2  rounded disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center w-32 py-3.5 font-bold"&gt;...&lt;/button&gt; is not clickable at point (304, 660). Other element would receive the click: &lt;iframe title="recaptcha challenge expires in two minutes" name="c-jli3o6fwj73f" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="https://www.google.com/recaptcha/api2/bframe?hl=en&amp;amp;v=_mscDd1KHr60EWWbt2I_ULP0&amp;amp;k=6LeLx4wiAAAAAPVS2eKakVC5Dfvv_atnZfsW5Y04&amp;amp;bft=0dAFcWeA4CENgWushfQCCSgONIUSxmPZvXJk1o22wKM56xPe5lHNB7wvtRR73dBIXVM6WLRvrpUWB3nDrfq1ItpY87bL2xYOSUoA" style="width: 400px; height: 580px;"&gt;&lt;/iframe&gt;
+  (Session info: chrome=139.0.7258.139)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff770df78d5+2802741]
+	GetHandleVerifier [0x0x7ff770b5eb70+79568]
+	(No symbol) [0x0x7ff7708fc0fa]
+	(No symbol) [0x0x7ff77095aaa9]
+	(No symbol) [0x0x7ff770958442]
+	(No symbol) [0x0x7ff770955481]
+	(No symbol) [0x0x7ff770954371]
+	(No symbol) [0x0x7ff770945bb8]
+	(No symbol) [0x0x7ff77097ac8a]
+	(No symbol) [0x0x7ff770945466]
+	(No symbol) [0x0x7ff77097aea0]
+	(No symbol) [0x0x7ff7709a2e24]
+	(No symbol) [0x0x7ff77097aa63]
+	(No symbol) [0x0x7ff770943c91]
+	(No symbol) [0x0x7ff770944a23]
+	GetHandleVerifier [0x0x7ff770e22ced+2979917]
+	GetHandleVerifier [0x0x7ff770e1d0f3+2956371]
+	GetHandleVerifier [0x0x7ff770e3acbd+3078173]
+	GetHandleVerifier [0x0x7ff770b7836e+184014]
+	GetHandleVerifier [0x0x7ff770b8024f+216495]
+	GetHandleVerifier [0x0x7ff770b670c4+113700]
+	GetHandleVerifier [0x0x7ff770b67279+114137]
+	GetHandleVerifier [0x0x7ff770b4df78+10968]
+	BaseThreadInitThunk [0x0x7ffa9cdce8d7+23]
+	RtlUserThreadStart [0x0x7ffa9dabc34c+44]
+</status>
+</kw>
+<status status="FAIL" start="2025-08-25T13:27:16.709902" elapsed="4.428906">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="bg-primary hover:bg-amber-400 text-black leading-none transition-colors duration-300 py-3.5 px-2  rounded disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center w-32 py-3.5 font-bold"&gt;...&lt;/button&gt; is not clickable at point (304, 660). Other element would receive the click: &lt;iframe title="recaptcha challenge expires in two minutes" name="c-jli3o6fwj73f" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="https://www.google.com/recaptcha/api2/bframe?hl=en&amp;amp;v=_mscDd1KHr60EWWbt2I_ULP0&amp;amp;k=6LeLx4wiAAAAAPVS2eKakVC5Dfvv_atnZfsW5Y04&amp;amp;bft=0dAFcWeA4CENgWushfQCCSgONIUSxmPZvXJk1o22wKM56xPe5lHNB7wvtRR73dBIXVM6WLRvrpUWB3nDrfq1ItpY87bL2xYOSUoA" style="width: 400px; height: 580px;"&gt;&lt;/iframe&gt;
+  (Session info: chrome=139.0.7258.139)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff770df78d5+2802741]
+	GetHandleVerifier [0x0x7ff770b5eb70+79568]
+	(No symbol) [0x0x7ff7708fc0fa]
+	(No symbol) [0x0x7ff77095aaa9]
+	(No symbol) [0x0x7ff770958442]
+	(No symbol) [0x0x7ff770955481]
+	(No symbol) [0x0x7ff770954371]
+	(No symbol) [0x0x7ff770945bb8]
+	(No symbol) [0x0x7ff77097ac8a]
+	(No symbol) [0x0x7ff770945466]
+	(No symbol) [0x0x7ff77097aea0]
+	(No symbol) [0x0x7ff7709a2e24]
+	(No symbol) [0x0x7ff77097aa63]
+	(No symbol) [0x0x7ff770943c91]
+	(No symbol) [0x0x7ff770944a23]
+	GetHandleVerifier [0x0x7ff770e22ced+2979917]
+	GetHandleVerifier [0x0x7ff770e1d0f3+2956371]
+	GetHandleVerifier [0x0x7ff770e3acbd+3078173]
+	GetHandleVerifier [0x0x7ff770b7836e+184014]
+	GetHandleVerifier [0x0x7ff770b8024f+216495]
+	GetHandleVerifier [0x0x7ff770b670c4+113700]
+	GetHandleVerifier [0x0x7ff770b67279+114137]
+	GetHandleVerifier [0x0x7ff770b4df78+10968]
+	BaseThreadInitThunk [0x0x7ffa9cdce8d7+23]
+	RtlUserThreadStart [0x0x7ffa9dabc34c+44]
+</status>
+</kw>
+<status status="FAIL" start="2025-08-25T13:27:11.597252" elapsed="9.541556">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="bg-primary hover:bg-amber-400 text-black leading-none transition-colors duration-300 py-3.5 px-2  rounded disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center w-32 py-3.5 font-bold"&gt;...&lt;/button&gt; is not clickable at point (304, 660). Other element would receive the click: &lt;iframe title="recaptcha challenge expires in two minutes" name="c-jli3o6fwj73f" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="https://www.google.com/recaptcha/api2/bframe?hl=en&amp;amp;v=_mscDd1KHr60EWWbt2I_ULP0&amp;amp;k=6LeLx4wiAAAAAPVS2eKakVC5Dfvv_atnZfsW5Y04&amp;amp;bft=0dAFcWeA4CENgWushfQCCSgONIUSxmPZvXJk1o22wKM56xPe5lHNB7wvtRR73dBIXVM6WLRvrpUWB3nDrfq1ItpY87bL2xYOSUoA" style="width: 400px; height: 580px;"&gt;&lt;/iframe&gt;
+  (Session info: chrome=139.0.7258.139)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff770df78d5+2802741]
+	GetHandleVerifier [0x0x7ff770b5eb70+79568]
+	(No symbol) [0x0x7ff7708fc0fa]
+	(No symbol) [0x0x7ff77095aaa9]
+	(No symbol) [0x0x7ff770958442]
+	(No symbol) [0x0x7ff770955481]
+	(No symbol) [0x0x7ff770954371]
+	(No symbol) [0x0x7ff770945bb8]
+	(No symbol) [0x0x7ff77097ac8a]
+	(No symbol) [0x0x7ff770945466]
+	(No symbol) [0x0x7ff77097aea0]
+	(No symbol) [0x0x7ff7709a2e24]
+	(No symbol) [0x0x7ff77097aa63]
+	(No symbol) [0x0x7ff770943c91]
+	(No symbol) [0x0x7ff770944a23]
+	GetHandleVerifier [0x0x7ff770e22ced+2979917]
+	GetHandleVerifier [0x0x7ff770e1d0f3+2956371]
+	GetHandleVerifier [0x0x7ff770e3acbd+3078173]
+	GetHandleVerifier [0x0x7ff770b7836e+184014]
+	GetHandleVerifier [0x0x7ff770b8024f+216495]
+	GetHandleVerifier [0x0x7ff770b670c4+113700]
+	GetHandleVerifier [0x0x7ff770b67279+114137]
+	GetHandleVerifier [0x0x7ff770b4df78+10968]
+	BaseThreadInitThunk [0x0x7ffa9cdce8d7+23]
+	RtlUserThreadStart [0x0x7ffa9dabc34c+44]
+</status>
+</test>
+<status status="FAIL" start="2025-08-25T13:27:11.588676" elapsed="9.550132"/>
+</suite>
+<status status="FAIL" start="2025-08-25T13:26:54.901759" elapsed="26.237049"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="1" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="1-Register">Tests.1-Register</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s2" name="2-Login">Tests.2-Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
