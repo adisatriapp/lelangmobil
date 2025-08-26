@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Check working directory
+      - name: Check working directorys
         run: pwd
       - name: Run tests
         uses: joonvena/robotframework-docker-action@master
