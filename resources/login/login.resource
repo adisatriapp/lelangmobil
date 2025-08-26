@@ -35,3 +35,10 @@ Click Button Login
     Wait Until Element Is Visible    ${btn_login}
     Sleep    3s
     Click Element    ${btn_login}
+
+Validate Data Diri
+    Wait Until Element Is Visible    ${input_namaDepan_datadiri}
+    Element Should Be Visible    ${input_namaBelakang_datadiri}
+    Element Should Be Visible    ${input_tanggalLahir_datadiri}
+    Element Should Be Visible    ${input_noKTP_datadiri}
+    Element Should Be Visible    ${input_masaKTP_datadiri}

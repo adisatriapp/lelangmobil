@@ -1,0 +1,6 @@
+input_namaDepan_datadiri = "//input[@placeholder='No Customer']"
+input_namaBelakang_datadiri = "//input[@placeholder='No Customer']"
+input_tempatLahir_datadiri = "//input[@placeholder='Tempat Lahir']"
+input_tanggalLahir_datadiri = "//div[@class='mb-5']//div[@class='dp__main dp__theme_light']//input"
+input_noKTP_datadiri = "//input[contains(@placeholder,'Nomor KTP')]"
+input_masaKTP_datadiri = "//body/div/main/div/div/div/div/div/form/div[1]/div[1]/div[1]"

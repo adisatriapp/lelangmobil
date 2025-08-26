@@ -8,8 +8,6 @@ ${CREDS_PY}    ${OUTPUT DIR}/test_data/data-auth.py
 
 *** Keywords ***
 The user is on the Registration page - Data Diri tab
-    Open Browser    ${login_URL}    chrome
-    Maximize Browser Window
     Click Element    ${btn_daftar}
     Wait Until Element Is Visible    ${title_pendaftaran}
 
