@@ -10,9 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+      - name: Check working directory
+        run: pwd
       - name: Run tests
-        uses: joonvena/robotframework-docker-action@v1.0
+        uses: joonvena/robotframework-docker-action@master
         with:
           robot_tests_dir: tests/
       - name: Store test report
@@ -28,12 +30,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Download test report
         uses: actions/download-artifact@v4
         with:
           name: reports
       - name: Output report
-        uses: joonvena/robotframework-reporter-action@v2
+        uses: joonvena/robotframework-reporter-action@v2.5
         with:
           gh_access_token: ${{ secrets.GITHUB_TOKEN }}
