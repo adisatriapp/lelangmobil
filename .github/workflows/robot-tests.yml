@@ -9,9 +9,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code test
-        uses: actions/checkout@v4
-      - name: Check working directorys
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Check working directory
         run: pwd
       - name: Run tests
         uses: joonvena/robotframework-docker-action@master
