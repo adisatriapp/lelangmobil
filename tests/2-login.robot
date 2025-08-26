@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation    Login flow validates user can authenticate to the site
-Resource    ${CURDIR}/../resources/imports.resource
+Resource    ../resources/imports.resource
 
 
 *** Test Cases ***
