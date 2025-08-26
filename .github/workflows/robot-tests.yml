@@ -16,7 +16,7 @@ jobs:
         with:
           robot_tests_dir: test
       - name: Store test report
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: reports
@@ -30,7 +30,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Download test report
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v4
         with:
           name: reports
       - name: Output report
