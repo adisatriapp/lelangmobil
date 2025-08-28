@@ -4,6 +4,7 @@ Resource    ../resources/login/login.resource
 Resource    ../resources/register/datadiri.resource
 Resource    ../resources/register/databayar.resource
 Resource    ../resources/profile/deposit.resource
+Resource    ../resources/browser.resource
 
 Variables    ../test_data/data-auth.py
 Variables    ../test_data/data-url.py

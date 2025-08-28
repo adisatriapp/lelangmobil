@@ -2,8 +2,7 @@
 Documentation    Registration flow validates user can register successfully
 Resource    ../resources/imports.resource
 
-Suite Setup    Open Browser    ${login_URL}    chrome
-...    Maximize Browser Window
+
 
 
 *** Test Cases ***
