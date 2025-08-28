@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.11.13 on linux)" generated="2025-08-28T23:10:56.427813" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="/home/runner/work/lelangmobil/lelangmobil/robotframework/tests">
+<suite id="s1-s1" name="1-Register" source="/home/runner/work/lelangmobil/lelangmobil/robotframework/tests/1-register.robot">
+<kw name="Start Headless Browser" owner="browser" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-08-28T23:10:56.690036" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x7f69c4550cd0&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-08-28T23:10:56.689758" elapsed="0.000315"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-08-28T23:10:56.690213" elapsed="0.000155"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-08-28T23:10:56.690488" elapsed="0.000212"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2025-08-28T23:10:56.690990" level="INFO">${options} = {'browserName': 'chrome', 'pageLoadStrategy': &lt;PageLoadStrategy.normal: 'normal'&gt;, 'goog:chromeOptions': {'extensions': [], 'args': ['headless', 'disable-gpu']}}</msg>
+<var>${options}</var>
+<arg>${chrome_options}</arg>
+<arg>to_capabilities</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-08-28T23:10:56.690813" elapsed="0.000206"/>
+</kw>
+<kw name="Set Chrome Options" owner="browser">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-08-28T23:10:56.691568" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x7f69c4552b10&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-08-28T23:10:56.691369" elapsed="0.000228"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>${option}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-08-28T23:10:56.691932" elapsed="0.000142"/>
+</kw>
+<var name="${option}">--disable-infobars</var>
+<status status="PASS" start="2025-08-28T23:10:56.691810" elapsed="0.000310"/>
+</iter>
+<iter>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>${option}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-08-28T23:10:56.692293" elapsed="0.000144"/>
+</kw>
+<var name="${option}">--headless</var>
+<status status="PASS" start="2025-08-28T23:10:56.692207" elapsed="0.000279"/>
+</iter>
+<iter>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>${option}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-08-28T23:10:56.692656" elapsed="0.000132"/>
+</kw>
+<var name="${option}">--disable-gpu</var>
+<status status="PASS" start="2025-08-28T23:10:56.692568" elapsed="0.000263"/>
+</iter>
+<iter>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>${option}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-08-28T23:10:56.693030" elapsed="0.000124"/>
+</kw>
+<var name="${option}">--no-sandbox</var>
+<status status="PASS" start="2025-08-28T23:10:56.692937" elapsed="0.000257"/>
+</iter>
+<iter>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>${option}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-08-28T23:10:56.693351" elapsed="0.000132"/>
+</kw>
+<var name="${option}">--window-size=1920,1080</var>
+<status status="PASS" start="2025-08-28T23:10:56.693273" elapsed="0.000250"/>
+</iter>
+<var>${option}</var>
+<value>@{chrome_arguments}</value>
+<status status="PASS" start="2025-08-28T23:10:56.691663" elapsed="0.001896"/>
+</for>
+<return>
+<value>${options}</value>
+<status status="PASS" start="2025-08-28T23:10:56.693614" elapsed="0.000043"/>
+</return>
+<msg time="2025-08-28T23:10:56.693775" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x7f69c4552b10&gt;</msg>
+<var>${chrome_options}</var>
+<doc>Set Chrome options for headless mode</doc>
+<status status="PASS" start="2025-08-28T23:10:56.691194" elapsed="0.002607"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-08-28T23:10:56.694079" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-08-28T23:10:56.693917" elapsed="10.301374"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-08-28T23:11:06.995687" level="INFO">Opening url 'https://jkt:RsonSmW7UgLUKm9@auction.lelangmobilku.co.id/login'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-08-28T23:11:06.995509" elapsed="2.810991"/>
+</kw>
+<arg>${login_URL}</arg>
+<status status="PASS" start="2025-08-28T23:10:56.689051" elapsed="13.117578"/>
+</kw>
+<test id="s1-s1-t1" name="Register with valid credentials" line="10">
+<kw name="GIVEN The user is on the Registration page - Data Diri tab" owner="datadiri">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-28T23:11:09.808133" level="INFO">Clicking element '//a[text()='Daftar Sekarang']'.</msg>
+<msg time="2025-08-28T23:11:10.964235" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-08-28T23:11:10.964410" level="FAIL">Element with locator '//a[text()='Daftar Sekarang']' not found.</msg>
+<arg>${btn_daftar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2025-08-28T23:11:09.807580" elapsed="1.157974">Element with locator '//a[text()='Daftar Sekarang']' not found.</status>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${title_pendaftaran}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-08-28T23:11:10.965764" elapsed="0.000034"/>
+</kw>
+<status status="FAIL" start="2025-08-28T23:11:09.807315" elapsed="1.158626">Element with locator '//a[text()='Daftar Sekarang']' not found.</status>
+</kw>
+<kw name="WHEN The user fills all &quot;Nama Depan&quot; with value" owner="datadiri">
+<arg>${namaDepan}</arg>
+<status status="NOT RUN" start="2025-08-28T23:11:10.966153" elapsed="0.000041"/>
+</kw>
+<kw name="AND The user fills all &quot;Nama Belakang&quot; with value" owner="datadiri">
+<arg>${namaBelakang}</arg>
+<status status="NOT RUN" start="2025-08-28T23:11:10.966334" elapsed="0.000029"/>
+</kw>
+<kw name="AND Fill &quot;Tempat Lahir&quot; with value" owner="datadiri">
+<arg>${tempatLahir}</arg>
+<status status="NOT RUN" start="2025-08-28T23:11:10.966496" elapsed="0.000029"/>
+</kw>
+<kw name="AND Fill &quot;Tanggal Lahir&quot; with value" owner="datadiri">
+<arg>${tanggalLahir}</arg>
+<status status="NOT RUN" start="2025-08-28T23:11:10.966672" elapsed="0.000028"/>
+</kw>
+<kw name="AND Fill Nomor KTP with value" owner="datadiri">
+<arg>${noKTP}</arg>
+<status status="NOT RUN" start="2025-08-28T23:11:10.966852" elapsed="0.000030"/>
+</kw>
+<kw name="AND Upload KTP" owner="datadiri">
+<status status="NOT RUN" start="2025-08-28T23:11:10.967089" elapsed="0.000030"/>
+</kw>
+<kw name="AND Fill &quot;Masa Berlaku KTP&quot; with value" owner="datadiri">
+<status status="NOT RUN" start="2025-08-28T23:11:10.967312" elapsed="0.000046"/>
+</kw>
+<kw name="AND Choose &quot;Kewarganegaraan&quot; as WNI" owner="datadiri">
+<status status="NOT RUN" start="2025-08-28T23:11:10.967567" elapsed="0.000041"/>
+</kw>
+<kw name="AND Fill &quot;Provinsi&quot; with value" owner="datadiri">
+<arg>${provinsi}</arg>
+<status status="NOT RUN" start="2025-08-28T23:11:10.967786" elapsed="0.000048"/>
+</kw>
+<kw name="AND Fill &quot;Kota&quot; with value" owner="datadiri">
+<arg>${kota}</arg>
+<status status="NOT RUN" start="2025-08-28T23:11:10.968046" elapsed="0.000043"/>
+</kw>
+<kw name="AND Fill &quot;Alamat Domisili&quot; with value" owner="datadiri">
+<arg>${alamatDomisili}</arg>
+<status status="NOT RUN" start="2025-08-28T23:11:10.968277" elapsed="0.000043"/>
+</kw>
+<kw name="AND Fill &quot;Nomor Telepon&quot; with value" owner="datadiri">
+<arg>${noTelp}</arg>
+<status status="NOT RUN" start="2025-08-28T23:11:10.968486" elapsed="0.000035"/>
+</kw>
+<kw name="AND Choose &quot;Pekerjaan&quot; as" owner="datadiri">
+<arg>${pekerjaan}</arg>
+<status status="NOT RUN" start="2025-08-28T23:11:10.968646" elapsed="0.000027"/>
+</kw>
+<kw name="AND Fill &quot;Nama Perusahaan&quot; with value" owner="datadiri">
+<arg>${namaPerusahaan}</arg>
+<status status="NOT RUN" start="2025-08-28T23:11:10.968789" elapsed="0.000025"/>
+</kw>
+<kw name="AND Fill &quot;Alamat perusahaan&quot; with value" owner="datadiri">
+<arg>${alamatPerusahaan}</arg>
+<status status="NOT RUN" start="2025-08-28T23:11:10.968960" elapsed="0.000030"/>
+</kw>
+<kw name="AND Fill &quot;Nomor Telepon Perusahaan&quot; with value" owner="datadiri">
+<arg>${noTelpPerusahaan}</arg>
+<status status="NOT RUN" start="2025-08-28T23:11:10.969116" elapsed="0.000027"/>
+</kw>
+<kw name="AND Choose NPWP as &quot;Tidak Ada&quot;" owner="datadiri">
+<status status="NOT RUN" start="2025-08-28T23:11:10.969252" elapsed="0.000026"/>
+</kw>
+<kw name="AND Choose &quot;Jenis Kendaraan&quot; as" owner="datadiri">
+<arg>${jenisKendaraan}</arg>
+<status status="NOT RUN" start="2025-08-28T23:11:10.969390" elapsed="0.000031"/>
+</kw>
+<kw name="AND Choose &quot;Kendaraan yang dicari&quot; as" owner="datadiri">
+<arg>${kendaraanDiCari}</arg>
+<status status="NOT RUN" start="2025-08-28T23:11:10.969539" elapsed="0.000026"/>
+</kw>
+<kw name="AND Choose &quot;Tujuan Pembelian&quot; as" owner="datadiri">
+<arg>${tujuanPembelian}</arg>
+<status status="NOT RUN" start="2025-08-28T23:11:10.969679" elapsed="0.000026"/>
+</kw>
+<kw name="AND Fill email with value" owner="datadiri">
+<arg>${data_email_qa}</arg>
+<status status="NOT RUN" start="2025-08-28T23:11:10.970159" elapsed="0.000033"/>
+</kw>
+<kw name="AND Fill &quot;Kata sandi&quot; and &quot;Konfirmasi&quot; with value" owner="datadiri">
+<arg>${data_pass_qa}</arg>
+<status status="NOT RUN" start="2025-08-28T23:11:10.970482" elapsed="0.000029"/>
+</kw>
+<kw name="AND The user clicks &quot;Selanjutnya&quot;" owner="datadiri">
+<status status="NOT RUN" start="2025-08-28T23:11:10.970626" elapsed="0.000027"/>
+</kw>
+<kw name="AND Fill &quot;Nomor rekening&quot; with value" owner="databayar">
+<arg>${noRek}</arg>
+<status status="NOT RUN" start="2025-08-28T23:11:10.970775" elapsed="0.000026"/>
+</kw>
+<kw name="AND Choose &quot;Bank&quot; as" owner="databayar">
+<arg>${bank}</arg>
+<status status="NOT RUN" start="2025-08-28T23:11:10.970928" elapsed="0.000027"/>
+</kw>
+<kw name="AND Fill &quot;Nama pemilik rekening&quot; with value" owner="databayar">
+<arg>${namaPemilikBank}</arg>
+<status status="NOT RUN" start="2025-08-28T23:11:10.971063" elapsed="0.000025"/>
+</kw>
+<kw name="AND Choose Sumber dana as" owner="databayar">
+<arg>${sumberDana}</arg>
+<status status="NOT RUN" start="2025-08-28T23:11:10.971194" elapsed="0.000025"/>
+</kw>
+<kw name="AND Choose &quot;metode pembayaran&quot; as" owner="databayar">
+<arg>${metodeBayar}</arg>
+<status status="NOT RUN" start="2025-08-28T23:11:10.971331" elapsed="0.000025"/>
+</kw>
+<kw name="AND Click “Daftar”" owner="databayar">
+<status status="NOT RUN" start="2025-08-28T23:11:10.971463" elapsed="0.000030"/>
+</kw>
+<kw name="THEN The Data inputs are saved and email validation is sended" owner="databayar">
+<status status="NOT RUN" start="2025-08-28T23:11:10.971597" elapsed="0.000025"/>
+</kw>
+<kw name="AND User will redirect to login page" owner="databayar">
+<status status="NOT RUN" start="2025-08-28T23:11:10.971744" elapsed="0.000027"/>
+</kw>
+<doc>End-to-end registration using valid personal and payment data</doc>
+<status status="FAIL" start="2025-08-28T23:11:09.806724" elapsed="1.165214">Element with locator '//a[text()='Daftar Sekarang']' not found.</status>
+</test>
+<doc>Registration flow validates user can register successfully</doc>
+<status status="FAIL" start="2025-08-28T23:10:56.449384" elapsed="14.522979"/>
+</suite>
+<suite id="s1-s2" name="2-Login" source="/home/runner/work/lelangmobil/lelangmobil/robotframework/tests/2-login.robot">
+<test id="s1-s2-t1" name="Login with valid credentials" line="9">
+<kw name="Start Headless Browser" owner="browser" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-08-28T23:11:10.978342" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x7f69c2d05150&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-08-28T23:11:10.978097" elapsed="0.000274"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-08-28T23:11:10.978477" elapsed="0.000116"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-08-28T23:11:10.978699" elapsed="0.000108"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<msg time="2025-08-28T23:11:10.979075" level="INFO">${options} = {'browserName': 'chrome', 'pageLoadStrategy': &lt;PageLoadStrategy.normal: 'normal'&gt;, 'goog:chromeOptions': {'extensions': [], 'args': ['headless', 'disable-gpu']}}</msg>
+<var>${options}</var>
+<arg>${chrome_options}</arg>
+<arg>to_capabilities</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-08-28T23:11:10.978919" elapsed="0.000182"/>
+</kw>
+<kw name="Set Chrome Options" owner="browser">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-08-28T23:11:10.979765" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x7f69c4552350&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-08-28T23:11:10.979577" elapsed="0.000215"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>${option}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-08-28T23:11:10.980108" elapsed="0.000128"/>
+</kw>
+<var name="${option}">--disable-infobars</var>
+<status status="PASS" start="2025-08-28T23:11:10.980015" elapsed="0.000262"/>
+</iter>
+<iter>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>${option}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-08-28T23:11:10.980439" elapsed="0.000120"/>
+</kw>
+<var name="${option}">--headless</var>
+<status status="PASS" start="2025-08-28T23:11:10.980361" elapsed="0.000237"/>
+</iter>
+<iter>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>${option}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-08-28T23:11:10.980753" elapsed="0.000184"/>
+</kw>
+<var name="${option}">--disable-gpu</var>
+<status status="PASS" start="2025-08-28T23:11:10.980674" elapsed="0.000308"/>
+</iter>
+<iter>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>${option}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-08-28T23:11:10.981142" elapsed="0.000121"/>
+</kw>
+<var name="${option}">--no-sandbox</var>
+<status status="PASS" start="2025-08-28T23:11:10.981062" elapsed="0.000240"/>
+</iter>
+<iter>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>${option}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-08-28T23:11:10.981449" elapsed="0.000118"/>
+</kw>
+<var name="${option}">--window-size=1920,1080</var>
+<status status="PASS" start="2025-08-28T23:11:10.981375" elapsed="0.000230"/>
+</iter>
+<var>${option}</var>
+<value>@{chrome_arguments}</value>
+<status status="PASS" start="2025-08-28T23:11:10.979856" elapsed="0.001783"/>
+</for>
+<return>
+<value>${options}</value>
+<status status="PASS" start="2025-08-28T23:11:10.981697" elapsed="0.000038"/>
+</return>
+<msg time="2025-08-28T23:11:10.981858" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x7f69c4552350&gt;</msg>
+<var>${chrome_options}</var>
+<doc>Set Chrome options for headless mode</doc>
+<status status="PASS" start="2025-08-28T23:11:10.979255" elapsed="0.002628"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-08-28T23:11:10.982164" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-08-28T23:11:10.982005" elapsed="0.286746"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-08-28T23:11:11.269334" level="INFO">Opening url 'https://jkt:RsonSmW7UgLUKm9@auction.lelangmobilku.co.id/login'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-08-28T23:11:11.269073" elapsed="1.876093"/>
+</kw>
+<arg>${login_URL}</arg>
+<status status="PASS" start="2025-08-28T23:11:10.977803" elapsed="2.167538"/>
+</kw>
+<kw name="WHEN Input form login" owner="login">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${field_email}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-28T23:11:13.146246" elapsed="0.529888"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-28T23:11:13.676769" level="INFO">Typing text 'tahubulat-II5Q9Bn6eF@example.com' into text field '//input[@type='email']'.</msg>
+<arg>${field_email}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-28T23:11:13.676414" elapsed="0.322103"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-28T23:11:13.999065" level="INFO">Typing text 'G5rokB5u7JZ4Bka2' into text field '//input[@type='password']'.</msg>
+<arg>${field_password}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-28T23:11:13.998746" elapsed="0.163557"/>
+</kw>
+<arg>${data_email_qa}</arg>
+<arg>${data_pass_qa}</arg>
+<status status="PASS" start="2025-08-28T23:11:13.145687" elapsed="1.016753"/>
+</kw>
+<kw name="AND Click captcha" owner="login">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${frame_recaptcha}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-28T23:11:14.163025" elapsed="0.020421"/>
+</kw>
+<kw name="Select Frame" owner="SeleniumLibrary">
+<msg time="2025-08-28T23:11:14.183966" level="INFO">Selecting frame '//iframe[contains(@title, 'reCAPTCHA')]'.</msg>
+<arg>${frame_recaptcha}</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<status status="PASS" start="2025-08-28T23:11:14.183674" elapsed="0.024027"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${checkbox_captcha}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-28T23:11:14.207940" elapsed="0.021020"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-28T23:11:14.229443" level="INFO">Clicking element '//div[@class='recaptcha-checkbox-border']'.</msg>
+<arg>${checkbox_captcha}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-28T23:11:14.229183" elapsed="0.309520"/>
+</kw>
+<kw name="Unselect Frame" owner="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" start="2025-08-28T23:11:14.539070" elapsed="0.001914"/>
+</kw>
+<status status="PASS" start="2025-08-28T23:11:14.162696" elapsed="0.378398"/>
+</kw>
+<kw name="AND Click Syarat dan Ketentuan" owner="login">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-28T23:11:14.542075" level="INFO">Clicking button '//input[@id='remember_me']'.</msg>
+<arg>${checkbox_syarat}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-28T23:11:14.541748" elapsed="0.062014"/>
+</kw>
+<status status="PASS" start="2025-08-28T23:11:14.541334" elapsed="0.062576"/>
+</kw>
+<kw name="AND Click Button Login" owner="login">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${btn_login}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-28T23:11:14.604426" elapsed="0.014714"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-28T23:11:17.619550" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-28T23:11:14.619277" elapsed="3.000413"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-28T23:11:17.620265" level="INFO">Clicking element '//button[normalize-space()='Masuk']'.</msg>
+<msg time="2025-08-28T23:11:19.036462" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-08-28T23:11:19.036672" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="bg-primary hover:bg-amber-400 text-black leading-none transition-colors duration-300 py-3.5 px-2  rounded disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center w-32 py-3.5 font-bold"&gt;...&lt;/button&gt; is not clickable at point (304, 710). Other element would receive the click: &lt;iframe title="recaptcha challenge expires in two minutes" name="c-8q07erf8cx0l" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="https://www.google.com/recaptcha/api2/bframe?hl=en&amp;amp;v=2sJvksnKlEApLvJt2btz_q7n&amp;amp;k=6LeLx4wiAAAAAPVS2eKakVC5Dfvv_atnZfsW5Y04&amp;amp;bft=0dAFcWeA6elIYPbRficB8KJcl4r1yXVRHLOHiSJ1qLJWjFknqWFSEk5Hjre22aHr-TCP8OWve9kI6uobw9bKRRd2MPumYi6QXFww" style="width: 400px; height: 580px;"&gt;&lt;/iframe&gt;
+  (Session info: chrome=139.0.7258.138); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
+Stacktrace:
+#0 0x562e3d21102a &lt;unknown&gt;
+#1 0x562e3ccb0a70 &lt;unknown&gt;
+#2 0x562e3cd0978c &lt;unknown&gt;
+#3 0x562e3cd075eb &lt;unknown&gt;
+#4 0x562e3cd04c92 &lt;unknown&gt;
+#5 0x562e3cd043a7 &lt;unknown&gt;
+#6 0x562e3ccf6b1b &lt;unknown&gt;
+#7 0x562e3cd283e2 &lt;unknown&gt;
+#8 0x562e3ccf649a &lt;unknown&gt;
+#9 0x562e3cd285ae &lt;unknown&gt;
+#10 0x562e3cd4e14f &lt;unknown&gt;
+#11 0x562e3cd281b3 &lt;unknown&gt;
+#12 0x562e3ccf459b &lt;unknown&gt;
+#13 0x562e3ccf5971 &lt;unknown&gt;
+#14 0x562e3d1d61fb &lt;unknown&gt;
+#15 0x562e3d1d9f49 &lt;unknown&gt;
+#16 0x562e3d1bd2d9 &lt;unknown&gt;
+#17 0x562e3d1daaf8 &lt;unknown&gt;
+#18 0x562e3d1a1bbf &lt;unknown&gt;
+#19 0x562e3d1fe0b8 &lt;unknown&gt;
+#20 0x562e3d1fe296 &lt;unknown&gt;
+#21 0x562e3d210006 &lt;unknown&gt;
+#22 0x7f95bb89caa4 &lt;unknown&gt;
+#23 0x7f95bb929c3c &lt;unknown&gt;
+</msg>
+<arg>${btn_login}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2025-08-28T23:11:17.619964" elapsed="1.417757">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="bg-primary hover:bg-amber-400 text-black leading-none transition-colors duration-300 py-3.5 px-2  rounded disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center w-32 py-3.5 font-bold"&gt;...&lt;/button&gt; is not clickable at point (304, 710). Other element would receive the click: &lt;iframe title="recaptcha challenge expires in two minutes" name="c-8q07erf8cx0l" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="https://www.google.com/recaptcha/api2/bframe?hl=en&amp;amp;v=2sJvksnKlEApLvJt2btz_q7n&amp;amp;k=6LeLx4wiAAAAAPVS2eKakVC5Dfvv_atnZfsW5Y04&amp;amp;bft=0dAFcWeA6elIYPbRficB8KJcl4r1yXVRHLOHiSJ1qLJWjFknqWFSEk5Hjre22aHr-TCP8OWve9kI6uobw9bKRRd2MPumYi6QXFww" style="width: 400px; height: 580px;"&gt;&lt;/iframe&gt;
+  (Session info: chrome=139.0.7258.138); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
+Stacktrace:
+#0 0x562e3d21102a &lt;unknown&gt;
+#1 0x562e3ccb0a70 &lt;unknown&gt;
+#2 0x562e3cd0978c &lt;unknown&gt;
+    [ Message content over the limit has been removed. ]
+#4 0x562e3cd04c92 &lt;unknown&gt;
+#5 0x562e3cd043a7 &lt;unknown&gt;
+#6 0x562e3ccf6b1b &lt;unknown&gt;
+#7 0x562e3cd283e2 &lt;unknown&gt;
+#8 0x562e3ccf649a &lt;unknown&gt;
+#9 0x562e3cd285ae &lt;unknown&gt;
+#10 0x562e3cd4e14f &lt;unknown&gt;
+#11 0x562e3cd281b3 &lt;unknown&gt;
+#12 0x562e3ccf459b &lt;unknown&gt;
+#13 0x562e3ccf5971 &lt;unknown&gt;
+#14 0x562e3d1d61fb &lt;unknown&gt;
+#15 0x562e3d1d9f49 &lt;unknown&gt;
+#16 0x562e3d1bd2d9 &lt;unknown&gt;
+#17 0x562e3d1daaf8 &lt;unknown&gt;
+#18 0x562e3d1a1bbf &lt;unknown&gt;
+#19 0x562e3d1fe0b8 &lt;unknown&gt;
+#20 0x562e3d1fe296 &lt;unknown&gt;
+#21 0x562e3d210006 &lt;unknown&gt;
+#22 0x7f95bb89caa4 &lt;unknown&gt;
+#23 0x7f95bb929c3c &lt;unknown&gt;</status>
+</kw>
+<status status="FAIL" start="2025-08-28T23:11:14.604147" elapsed="4.433795">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="bg-primary hover:bg-amber-400 text-black leading-none transition-colors duration-300 py-3.5 px-2  rounded disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center w-32 py-3.5 font-bold"&gt;...&lt;/button&gt; is not clickable at point (304, 710). Other element would receive the click: &lt;iframe title="recaptcha challenge expires in two minutes" name="c-8q07erf8cx0l" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="https://www.google.com/recaptcha/api2/bframe?hl=en&amp;amp;v=2sJvksnKlEApLvJt2btz_q7n&amp;amp;k=6LeLx4wiAAAAAPVS2eKakVC5Dfvv_atnZfsW5Y04&amp;amp;bft=0dAFcWeA6elIYPbRficB8KJcl4r1yXVRHLOHiSJ1qLJWjFknqWFSEk5Hjre22aHr-TCP8OWve9kI6uobw9bKRRd2MPumYi6QXFww" style="width: 400px; height: 580px;"&gt;&lt;/iframe&gt;
+  (Session info: chrome=139.0.7258.138); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
+Stacktrace:
+#0 0x562e3d21102a &lt;unknown&gt;
+#1 0x562e3ccb0a70 &lt;unknown&gt;
+#2 0x562e3cd0978c &lt;unknown&gt;
+    [ Message content over the limit has been removed. ]
+#4 0x562e3cd04c92 &lt;unknown&gt;
+#5 0x562e3cd043a7 &lt;unknown&gt;
+#6 0x562e3ccf6b1b &lt;unknown&gt;
+#7 0x562e3cd283e2 &lt;unknown&gt;
+#8 0x562e3ccf649a &lt;unknown&gt;
+#9 0x562e3cd285ae &lt;unknown&gt;
+#10 0x562e3cd4e14f &lt;unknown&gt;
+#11 0x562e3cd281b3 &lt;unknown&gt;
+#12 0x562e3ccf459b &lt;unknown&gt;
+#13 0x562e3ccf5971 &lt;unknown&gt;
+#14 0x562e3d1d61fb &lt;unknown&gt;
+#15 0x562e3d1d9f49 &lt;unknown&gt;
+#16 0x562e3d1bd2d9 &lt;unknown&gt;
+#17 0x562e3d1daaf8 &lt;unknown&gt;
+#18 0x562e3d1a1bbf &lt;unknown&gt;
+#19 0x562e3d1fe0b8 &lt;unknown&gt;
+#20 0x562e3d1fe296 &lt;unknown&gt;
+#21 0x562e3d210006 &lt;unknown&gt;
+#22 0x7f95bb89caa4 &lt;unknown&gt;
+#23 0x7f95bb929c3c &lt;unknown&gt;</status>
+</kw>
+<kw name="THEN Validate Data Diri" owner="login">
+<status status="NOT RUN" start="2025-08-28T23:11:19.038183" elapsed="0.000042"/>
+</kw>
+<doc>Successful login using valid credentials</doc>
+<status status="FAIL" start="2025-08-28T23:11:10.977318" elapsed="8.061062">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="bg-primary hover:bg-amber-400 text-black leading-none transition-colors duration-300 py-3.5 px-2  rounded disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center w-32 py-3.5 font-bold"&gt;...&lt;/button&gt; is not clickable at point (304, 710). Other element would receive the click: &lt;iframe title="recaptcha challenge expires in two minutes" name="c-8q07erf8cx0l" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="https://www.google.com/recaptcha/api2/bframe?hl=en&amp;amp;v=2sJvksnKlEApLvJt2btz_q7n&amp;amp;k=6LeLx4wiAAAAAPVS2eKakVC5Dfvv_atnZfsW5Y04&amp;amp;bft=0dAFcWeA6elIYPbRficB8KJcl4r1yXVRHLOHiSJ1qLJWjFknqWFSEk5Hjre22aHr-TCP8OWve9kI6uobw9bKRRd2MPumYi6QXFww" style="width: 400px; height: 580px;"&gt;&lt;/iframe&gt;
+  (Session info: chrome=139.0.7258.138); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
+Stacktrace:
+#0 0x562e3d21102a &lt;unknown&gt;
+#1 0x562e3ccb0a70 &lt;unknown&gt;
+#2 0x562e3cd0978c &lt;unknown&gt;
+    [ Message content over the limit has been removed. ]
+#4 0x562e3cd04c92 &lt;unknown&gt;
+#5 0x562e3cd043a7 &lt;unknown&gt;
+#6 0x562e3ccf6b1b &lt;unknown&gt;
+#7 0x562e3cd283e2 &lt;unknown&gt;
+#8 0x562e3ccf649a &lt;unknown&gt;
+#9 0x562e3cd285ae &lt;unknown&gt;
+#10 0x562e3cd4e14f &lt;unknown&gt;
+#11 0x562e3cd281b3 &lt;unknown&gt;
+#12 0x562e3ccf459b &lt;unknown&gt;
+#13 0x562e3ccf5971 &lt;unknown&gt;
+#14 0x562e3d1d61fb &lt;unknown&gt;
+#15 0x562e3d1d9f49 &lt;unknown&gt;
+#16 0x562e3d1bd2d9 &lt;unknown&gt;
+#17 0x562e3d1daaf8 &lt;unknown&gt;
+#18 0x562e3d1a1bbf &lt;unknown&gt;
+#19 0x562e3d1fe0b8 &lt;unknown&gt;
+#20 0x562e3d1fe296 &lt;unknown&gt;
+#21 0x562e3d210006 &lt;unknown&gt;
+#22 0x7f95bb89caa4 &lt;unknown&gt;
+#23 0x7f95bb929c3c &lt;unknown&gt;</status>
+</test>
+<doc>Login flow validates user can authenticate to the site</doc>
+<status status="FAIL" start="2025-08-28T23:11:10.972872" elapsed="8.065956"/>
+</suite>
+<suite id="s1-s3" name="3-Deposit" source="/home/runner/work/lelangmobil/lelangmobil/robotframework/tests/3-deposit.robot">
+<test id="s1-s3-t1" name="Validate Deposit" line="9">
+<kw name="AND Click Tab Deposit" owner="deposit">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-08-28T23:11:24.532025" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-08-28T23:11:24.532180" level="FAIL">Element '//a[normalize-space()='Deposit']' not visible after 5 seconds.</msg>
+<arg>${tab_deposit}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-08-28T23:11:19.044273" elapsed="5.488404">Element '//a[normalize-space()='Deposit']' not visible after 5 seconds.</status>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${tab_deposit}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-08-28T23:11:24.532885" elapsed="0.000057"/>
+</kw>
+<status status="FAIL" start="2025-08-28T23:11:19.044055" elapsed="5.488999">Element '//a[normalize-space()='Deposit']' not visible after 5 seconds.</status>
+</kw>
+<kw name="THEN Validate element in deposit page" owner="deposit">
+<status status="NOT RUN" start="2025-08-28T23:11:24.533247" elapsed="0.000060"/>
+</kw>
+<doc>Validate Deposit</doc>
+<status status="FAIL" start="2025-08-28T23:11:19.043691" elapsed="5.489756">Element '//a[normalize-space()='Deposit']' not visible after 5 seconds.</status>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-08-28T23:11:24.533929" elapsed="0.069890"/>
+</kw>
+<doc>Login flow validates user can authenticate to the site</doc>
+<status status="FAIL" start="2025-08-28T23:11:19.039415" elapsed="5.564548"/>
+</suite>
+<status status="FAIL" start="2025-08-28T23:10:56.428549" elapsed="28.176077"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="3" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Tests" id="s1" pass="0" fail="3" skip="0">Tests</stat>
+<stat name="1-Register" id="s1-s1" pass="0" fail="1" skip="0">Tests.1-Register</stat>
+<stat name="2-Login" id="s1-s2" pass="0" fail="1" skip="0">Tests.2-Login</stat>
+<stat name="3-Deposit" id="s1-s3" pass="0" fail="1" skip="0">Tests.3-Deposit</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-08-28T23:10:56.683620" level="WARN">Error in file '/home/runner/work/lelangmobil/lelangmobil/robotframework/resources/browser.resource' on line 25: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+</errors>
+</robot>
