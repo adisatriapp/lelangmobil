@@ -2,6 +2,7 @@
 Documentation    Login flow validates user can authenticate to the site
 Resource    ../resources/imports.resource
 
+
 Suite Teardown    Close Browser
 
 *** Test Cases ***
