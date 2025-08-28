@@ -8,6 +8,7 @@ ${CREDS_PY}    ${OUTPUT DIR}/test_data/data-auth.py
 
 *** Keywords ***
 The user is on the Registration page - Data Diri tab
+    Wait Until Element Is Visible    ${btn_daftar}
     Click Element    ${btn_daftar}
     Wait Until Element Is Visible    ${title_pendaftaran}
 
