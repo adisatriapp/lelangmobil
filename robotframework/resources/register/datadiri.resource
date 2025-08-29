@@ -79,7 +79,7 @@ Upload KTP
     # Click Element    ${btn_uploadKTP}
     Sleep    3s
     # Choose File    ${upload_KTP}    ${EXECDIR}/resources/register/ktp.jpg
-    Choose File    ${upload_KTP}    ${EXECDIR}/robotframework/test_data/files_data/ktp.jpg
+    Choose File    ${upload_KTP}    ${EXECDIR}/test_data/files_data/ktp.jpg
     
 Fill "Masa Berlaku KTP" with value
     # Scroll to the element first to ensure it's visible
